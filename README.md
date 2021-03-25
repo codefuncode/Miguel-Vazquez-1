@@ -1,2 +1,2 @@
-# Miguel-Vazquez
-Tutoria
+# Migel-Vazquez
+Tutoria de un Sistema para la universidad 

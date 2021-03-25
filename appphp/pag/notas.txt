@@ -1,0 +1,38 @@
+((isset($_POST['nombre']) && (!$_POST['nombre'] == "")) &&
+    (isset($_POST['estado']) && (!$_POST['estado'] == "")) &&
+    (isset($_POST['fecha']) && (!$_POST['fecha'] == "")) &&
+    (isset($_POST['idclasificacion']) && (!$_POST['idclasificacion'] == "")) &&
+    (isset($_POST['idplataforma']) && (!$_POST['idplataforma'] == "")) &&
+    (isset($_POST['cantidad']) && (!$_POST['cantidad'] == "")) &&
+    (isset($_POST['precio']) && (!$_POST['precio'] == "")))
+
+
+<li class="items">
+<div class="infoWrap">
+<div class="cartSection">
+<img alt="" class="itemImg" src="../img/technics-q-c-300-300-4.jpg"/>
+
+<h3>
+Item Name 1
+</h3>
+<p>
+<input class="qty" placeholder="3" type="text" style="width: 50px" />
+x $5.00
+</p>
+<p class="stockStatus">
+In Stock
+</p>
+</div>
+<div class="prodTotal cartSection">
+<p>
+$15.00
+</p>
+</div>
+<div class="cartSection removeWrap">
+<!--  se debe agregar con javascript para que funcione -->
+<a class="remove" href="#">
+x
+</a>
+</div>
+</div>
+</li>

@@ -1,0 +1,54 @@
+    // lista.classList.add("items");
+    // lista.childNodes[0];
+    // lista.childNodes[0].childNodes[0].classList.add("cartSection");
+    // lista.childNodes[0].childNodes[0].childNodes[0].classList.add("1");
+    // lista.childNodes[0].childNodes[0].childNodes[0].innerHTML = nombre;
+    // lista.childNodes[0].childNodes[0].childNodes[1].classList.add("2");
+
+    // lista.childNodes[0].childNodes[0].childNodes[1].childNodes[0].classList.add("qty");
+    // // lista.childNodes[0].childNodes[0].childNodes[1].textContent = cantidad;
+    // lista.childNodes[0].childNodes[0].childNodes[2].classList.add("stockStatus");
+    // lista.childNodes[0].childNodes[0].childNodes[2].innerHTML = stock;
+
+    // // lista.childNodes[0].childNodes[0].childNodes[2].innerHTML = stock;
+    // //  rec0ordar src de la imagen
+    // lista.childNodes[0].childNodes[0].childNodes[3].classList.add("itemImg");
+    // lista.childNodes[0].childNodes[0].childNodes[3].src = "../img/technics-q-c-300-300-4.jpg";;
+
+    // //  rec0ordar src de la imagen
+    // lista.childNodes[0].childNodes[1].childNodes[0].innerHTML = precio;
+    // lista.childNodes[0].childNodes[1].classList.add("prodTotal", "cartSection");
+
+    // lista.childNodes[0].childNodes[2].classList.add("cartSection", "removeWrap");
+    // lista.childNodes[0].childNodes[2].innerHTML = "x";
+
+    // lista.childNodes[0].childNodes[0].childNodes.add("infoWrap");
+
+    // lista.childNodes[0].childNodes[0].childNodes[0].childNodes.add("cartSection");
+
+    // lista.childNodes[0].childNodes[0].childNodes[1].childNodes.add("prodTotal", "cartSection");
+    // lista.childNodes[0].childNodes[0].childNodes[2].childNodes.add("cartSection", "removeWrap");
+
+    // lista.childNodes[0].childNodes[1].childNodes;
+    // lista.childNodes[0].childNodes[1].childNodes[0].childNodes;
+
+    // console.log(lista);
+
+    // let variable = " Pepe compro";
+
+    // console.log('<div class=\"infoWrap\"><div class=\"cartSection\"><h3 class=\"1\">' + variable + ' variable</h3><p class=\"2\"><input class=\"qty\"></p><p class=\"3\">In Stock</p><img class=\"itemImg\"></div><div class=\"prodTotal cartSection\"><p>$15.00</p></div><div class=\"cartSection removeWrap\"><a></a></div></div>');
+    // console.log(lista.childNodes);
+    // console.log(lista.childNodes[0].childNodes);
+
+    // console.log(lista.childNodes[0].childNodes[0].childNodes);
+
+    // console.log(lista.childNodes[0].childNodes[0].childNodes[0].childNodes);
+    // console.log(lista.childNodes[0].childNodes[0].childNodes[1].childNodes);
+    // console.log(lista.childNodes[0].childNodes[0].childNodes[2].childNodes);
+    // console.log(lista.childNodes[0].childNodes[0].childNodes[3].childNodes);
+
+    // console.log(lista.childNodes[0].childNodes[1].childNodes);
+    // console.log(lista.childNodes[0].childNodes[1].childNodes[0].childNodes);
+
+    // console.log(lista.childNodes[0].childNodes[2].childNodes);
+    // console.log(lista.childNodes[0].childNodes[2].childNodes[0].childNodes);
