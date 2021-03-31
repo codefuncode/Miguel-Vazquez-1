@@ -118,9 +118,17 @@
                   </span>
                 </li>
                 <li class="totalRow">
-                  <a class="carritobtn continue" href="#">
+                  <form action="../php/comprar.php" method="post">
+                    <input class="carritobtn continue" id="carritobtn" type="submit"/>
+                    <input name="idjuego1" type="hidden" value='{idjuego: "John", age: 31, city: "New York"}'/>
+                    <input name="idjuego2" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
+                    <input name="idjuego3" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
+                    <input name="idjuego4" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
+                    <input name="idjuego5" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
+                  </form>
+                  <!--   <a class="carritobtn continue" id="carritobtn" href="#">
                     Comprar ahora
-                  </a>
+                  </a> -->
                 </li>
               </ul>
             </div>

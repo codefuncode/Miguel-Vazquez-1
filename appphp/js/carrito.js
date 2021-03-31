@@ -309,4 +309,15 @@ function precios(argument) {
     }
     return precioproducto;
 }
+
+function comprar(argument) {
+    let carritobtn = document.getElementById("carritobtn");
+    let displaydatos = document.querySelectorAll("#displaydatos tr");
+    console.log(displaydatos);
+}
+
 selecionatr();
+
+comprar();
+
+// console.log('');
