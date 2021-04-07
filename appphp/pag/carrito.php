@@ -119,12 +119,11 @@
                 </li>
                 <li class="totalRow">
                   <form action="../php/comprar.php" method="post">
+                    <!-- <form> -->
                     <input class="carritobtn continue" id="carritobtn" type="submit"/>
-                    <input name="idjuego1" type="hidden" value='{idjuego: "John", age: 31, city: "New York"}'/>
-                    <input name="idjuego2" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
-                    <input name="idjuego3" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
-                    <input name="idjuego4" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
-                    <input name="idjuego5" type="hidden" value='{name: "John", age: 31, city: "New York"}'/>
+
+                    <div class="datos_hide">
+                    </div>
                   </form>
                   <!--   <a class="carritobtn continue" id="carritobtn" href="#">
                     Comprar ahora

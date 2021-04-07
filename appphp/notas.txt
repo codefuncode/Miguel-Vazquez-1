@@ -1,1 +1,3 @@
 notas.txt
+
+https://stackoverflow.com/questions/14050812/how-to-post-an-associative-array-in-php

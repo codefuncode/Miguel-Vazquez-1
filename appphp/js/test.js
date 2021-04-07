@@ -341,3 +341,28 @@ Object.size = function(obj) {
     }
     return size;
 };
+
+
+
+    articulos = [];
+    for (var i = 0; i < seleccion.length; i++) {
+        let dato = {
+            "idjuego": seleccion[i].getAttribute("idjuego"),
+
+        }
+        //        let nombre = registro.childNodes[0].textContent;
+        // let cantidad = registro.childNodes[5].textContent;
+        // let precio = registro.childNodes[6].textContent;
+        articulos.push(dato);
+        dato = {}
+    }
+    var jkaslbdjbvlkj={
+
+        "":{firstName:"John", lastName:"Doe", age:46},
+       "" person,
+       "" person
+   }
+    var person = {firstName:"John", lastName:"Doe", age:46};  
+     var person = {firstName:"John", lastName:"Doe", age:46};  
+      var person = {firstName:"John", lastName:"Doe", age:46};  
+       var person = {firstName:"John", lastName:"Doe", age:46};

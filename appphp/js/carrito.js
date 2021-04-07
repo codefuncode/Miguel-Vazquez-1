@@ -1,3 +1,5 @@
+var articulos = [];
+
 function remueveitem(argument) {
     console.log('ok');
     let remueve = document.querySelectorAll(".removeWrap");
@@ -100,6 +102,17 @@ function cambiacolor(fila) {
         cartWrap.appendChild(lista[i]);
     }
 
+    // =================================================================
+    // =================================================================
+    // ===============================================================
+    //  Insertar cantidad tambien 
+    // ===============================================================
+    datos_compra();
+
+    // =================================================================
+    // =================================================================
+    // ===============================================================
+    // ===============================================================
     let btn_qty = document.querySelectorAll(".qty");
 
     let preciototal = document.querySelectorAll(".prodTotal p");
@@ -162,11 +175,11 @@ function cambiacolor(fila) {
         for (var i = 0; i < preciototal.length; i++) {
 
             subtotal = subtotal + parseFloat(preciototal[i].textContent.substring(1));
-            console.log(parseFloat(preciototal[i].textContent.substring(1)));
+            // console.log(parseFloat(preciototal[i].textContent.substring(1)));
         }
-        console.log("subtotal");
-        console.log(subtotal);
-        console.log("subtotal");
+        // console.log("subtotal");
+        // console.log(subtotal);
+        // console.log("subtotal");
         let subtotalvalue = document.querySelector('.subtotalvalue');
 
         subtotal = subtotal.toFixed(2);
@@ -234,6 +247,7 @@ function craeatargeta(registro) {
 
     let lista = document.createElement("LI");
     lista.classList.add("items");
+    lista.setAttribute("idjuego", registro.getAttribute("idjuego"));
     let infoWrap = document.createElement("DIV");
     infoWrap.classList.add("infoWrap");
     let cartSection = document.createElement("DIV");
@@ -310,14 +324,84 @@ function precios(argument) {
     return precioproducto;
 }
 
-function comprar(argument) {
-    let carritobtn = document.getElementById("carritobtn");
+function datos_compra(argument) {
+    let compra_idjuego = document.querySelectorAll(".cartWrap [idjuego]");
+    let compra_qty = document.querySelectorAll(".cartWrap .qty");
+    console.log(compra_idjuego);
+    let seleccion = [];
+    // let cartWrap = document.getElementById('cartWrap');
+    // borra_nodos(cartWrap);
     let displaydatos = document.querySelectorAll("#displaydatos tr");
-    console.log(displaydatos);
+    for (var i = 0; i < displaydatos.length; i++) {
+        if (displaydatos[i].style.backgroundColor == "green") {
+            seleccion.push(displaydatos[i]);
+        }
+    }
+
+    articulos = [];
+    let data_temp = [];
+    let nombre = "dato";
+    let input = [];
+
+    for (var i = 0; i < seleccion.length; i++) {
+        input.push(document.createElement("input"));
+        input[i].setAttribute("type", "hidden");
+        input[i].setAttribute("name", "arraydatos[]");
+
+        let dato = {
+            "idjuego": compra_idjuego[i].getAttribute("idjuego"),
+            "qty": compra_qty[i].value,
+
+        }
+        let myJSON = JSON.stringify(dato);
+        // let myJSON = dato;
+        input[i].setAttribute("value", myJSON);
+        //        let nombre = registro.childNodes[0].textContent;
+        // let cantidad = registro.childNodes[5].textContent;
+        // let precio = registro.childNodes[6].textContent;
+        // articulos.push(dato);
+        // dato = {}
+    }
+
+    console.log(input);
+    let datos_hide = document.querySelector(".datos_hide");
+
+    for (var i = 0; i < input.length; i++) {
+        datos_hide.appendChild(input[i]);
+    }
+
+    // console.log("============================");
+    // console.log("articulos");
+    // console.log(articulos);
+    // var myJSON = JSON.stringify(articulos);
+
+    // let datos = document.getElementById("datos");
+    // datos.value = articulos;
+    // console.log(myJSON);
+    // console.log("=============================");
+}
+
+function comprar(argument) {
+    // let carritobtn = document.getElementById("carritobtn");
+    // let displaydatos = document.querySelectorAll("#displaydatos tr");
+
+    carritobtn.addEventListener("click", function(argument) {
+
+        argument.preventDefault()
+        // for (var i = 0; i < displaydatos.length; i++) {
+        //     if (displaydatos[i].style.backgroundColor == "green") {
+        //         console.log(displaydatos[i]);
+        //     } else {
+        //         console.log(displaydatos[i] + " No esta seleccionado");
+        //     }
+
+        // }
+    });
+    // console.log(displaydatos);
 }
 
 selecionatr();
 
-comprar();
+// comprar();
 
 // console.log('');

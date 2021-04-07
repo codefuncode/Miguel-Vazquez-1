@@ -52,3 +52,55 @@
 
     // console.log(lista.childNodes[0].childNodes[2].childNodes);
     // console.log(lista.childNodes[0].childNodes[2].childNodes[0].childNodes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function datos_compra(argument) {
+    let compra_idjuego = document.querySelectorAll(".cartWrap [idjuego]");
+    let compra_qty = document.querySelectorAll(".cartWrap .qty");
+    console.log(compra_idjuego);
+      let seleccion = [];
+    let cartWrap = document.getElementById('cartWrap');
+    borra_nodos(cartWrap);
+    let displaydatos = document.querySelectorAll("#displaydatos tr");
+    for (var i = 0; i < displaydatos.length; i++) {
+        if (displaydatos[i].style.backgroundColor == "green") {
+            seleccion.push(displaydatos[i]);
+        }
+    }
+
+    articulos = [];
+    for (var i = 0; i < seleccion.length; i++) {
+        let dato = {
+            "idjuego": compra_idjuego[i].getAttribute("idjuego"),
+            "qty": compra_qty[i].value,
+
+        }
+        //        let nombre = registro.childNodes[0].textContent;
+        // let cantidad = registro.childNodes[5].textContent;
+        // let precio = registro.childNodes[6].textContent;
+        articulos.push(dato);
+        dato = {}
+    }
+
+    console.log("============================");
+    console.log("articulos");
+    console.log(articulos);
+    var myJSON = JSON.stringify(articulos);
+
+    let datos = document.getElementById("datos");
+    datos.value = myJSON;
+    console.log(myJSON);
+    console.log("=============================");
+}
