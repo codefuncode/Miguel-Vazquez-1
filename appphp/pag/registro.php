@@ -35,7 +35,9 @@
     <form action="registro.php" method="post">
 
 <?php
+//consulta con la base de datos.
 include_once './php/coneccion.php';
+//Condicional en el cual verifica la variable $_POST en registro.
 if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     (isset($_POST['usuario'])) && ($_POST['usuario'] != "") &&
     (isset($_POST['mail'])) && ($_POST['mail'] != "") &&
@@ -46,6 +48,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     $mail    = $_POST['mail'];
     $pass    = $_POST['pass'];
 
+//condicional en el cual verifica si el nombre de usuario o el correo ya existe dentro de la base de datos.
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -125,6 +128,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     <div class="container signin">
       <p>
         Ya tienes cuenta?
+        <!--Redirijira al usuario al inicio o "Login"-->
         <a href="../pag/inicio.php">
           Inicio
         </a>
