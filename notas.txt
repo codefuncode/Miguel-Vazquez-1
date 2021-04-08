@@ -4,3 +4,6 @@ sudo /opt/lampp/lampp start
 Boostrap version doc https://getbootstrap.com/docs/4.5/getting-started/introduction/
 
 Envió de datos para procesar usando input oculto 
+
+
+Detener eveto de formulario  error pass muy largo  registro.php

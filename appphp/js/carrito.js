@@ -346,7 +346,7 @@ function datos_compra(argument) {
     for (var i = 0; i < seleccion.length; i++) {
         input.push(document.createElement("input"));
         input[i].setAttribute("type", "hidden");
-        input[i].setAttribute("name", "arraydatos[]");
+        input[i].setAttribute("name", "arraydatos['" + i + "']");
 
         let dato = {
             "idjuego": compra_idjuego[i].getAttribute("idjuego"),
@@ -356,6 +356,7 @@ function datos_compra(argument) {
         let myJSON = JSON.stringify(dato);
         // let myJSON = dato;
         input[i].setAttribute("value", myJSON);
+
         //        let nombre = registro.childNodes[0].textContent;
         // let cantidad = registro.childNodes[5].textContent;
         // let precio = registro.childNodes[6].textContent;
