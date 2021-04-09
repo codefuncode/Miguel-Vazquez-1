@@ -2,10 +2,10 @@
 
 // =========================================
 //variables para establecer la connecion con la base de datos cuando esta en un servidor.
-$servername = "localhost";
-$username   = "public";
-$password   = "pass2468";
-$dbname     = "GameShark";
+//$servername = "localhost";
+//$username   = "public";
+//$password   = "pass2468";
+//$dbname     = "GameShark";
 
 // ========================================
 
@@ -14,4 +14,9 @@ $dbname     = "GameShark";
 // $password   = "81m5pzn2";
 // $dbname     = "epiz_28022149_gameshark";
 
+
+$servername = "localhost";
+$username   = "root";
+$password   = "";
+$dbname     = "gameshark";
 ?>
