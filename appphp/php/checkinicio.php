@@ -1,4 +1,5 @@
 <?php
+//Usa una condicional en el cual si puede detectar un cookie en el navegador.
 if (!isset($_COOKIE['ID'])) {
     if ((isset($_POST['uname'])) && ($_POST['uname'] != "") &&
         (isset($_POST['psw'])) && ($_POST['psw'] != "")) {
@@ -19,13 +20,14 @@ if (!isset($_COOKIE['ID'])) {
                 $cookie_name  = "ID";
                 $cookie_value = $result[0]['idusuario'];
 
+                //determina si el cookie esta disponible. de estar disponible, redirijira al usuario al inventario. De lo contrario, lo envia al inicio.
                 if (!isset($_COOKIE[$cookie_name])) {
                     setcookie($cookie_name, $cookie_value, time() + 60 * 60 * 24 * 30, "/");
                     echo "Cookie '" . $cookie_name . "' no set!<br>";
                     echo "Value is: " . $_COOKIE[$cookie_name];
                     header("Location: inventario.php");
                 } else {
-
+                    //Redirijira el usuario al inventario de poder detectar el cookie.
                     header("Location: inventario.php");
 
                 }
@@ -33,7 +35,7 @@ if (!isset($_COOKIE['ID'])) {
                 // header("Location: inventario.php");
 
             } else {
-
+              //Redirijira al usuario al inicio
                 header("Location: inicio.php");
 
             }
