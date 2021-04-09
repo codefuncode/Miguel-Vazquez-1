@@ -35,7 +35,8 @@
     <form action="registro.php" method="post">
 
 <?php
-include_once './php/coneccion.php';
+
+include_once '../php/coneccion.php';
 if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     (isset($_POST['usuario'])) && ($_POST['usuario'] != "") &&
     (isset($_POST['mail'])) && ($_POST['mail'] != "") &&
@@ -49,7 +50,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $conn->prepare("SELECT * FROM usuario WHERE correo= '$mail' AND usuario= '$usuario'");
+        $sql = $conn->prepare("SELECT * FROM usuario WHERE correo= '$mail' OR usuario= '$usuario'");
         $sql->execute();
         $count = $sql->rowCount();
 
@@ -115,7 +116,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
             Contraseña
           </b>
         </label>
-        <input id="pass" name="pass" placeholder="Escribe tu Contraseña" required="" type="password"/>
+        <input id="pass" name="pass" placeholder="Escribe tu Contraseña" required="" maxlength="49" type="password"/>
         <hr/>
         <button class="registerbtn" type="submit">
           Registrarme
