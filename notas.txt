@@ -14,4 +14,81 @@ Detener eveto de formulario  error pass muy largo  registro.php
 Nueva rama proyectos
 =======
 Nuevo cambio 
+<<<<<<< HEAD
+>>>>>>> main
+=======
+
+Cambio 2
+
+Tú
+20:42
+git status
+miguelking 236
+20:46
+814 370 659
+8bc14a
+Tú
+21:00
+https://git-scm.com/docs/git-merge
+Tú
+21:18
+git checkout master
+
+git merge dev
+
+git push origin master
+miguelking 236
+21:22
+mavvazquez236@gmail.com
+Tú
+21:25
+git push origin localBranchName:remoteBranchName
+git push origin localBranchName:remoteBranchName
+Tú
+21:40
+https://stackoverflow.com/questions/13340329/how-to-save-a-git-commit-message-from-windows-cmd
+Tú
+22:36
+https://prototype.php.net/versions/7.4/install/iis
+Tú
+22:49
+https://www.dll-files.com/php7apache2_4.dll.html
+Tú
+22:55
+https://www.apachefriends.org/download.html
+miguelking 236
+22:55
+https://windows.php.net/download/
+Tú
+23:12
+ALTER TABLE Persons
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName); 
+Tú
+23:15
+ALTER TABLE Persons
+DROP PRIMARY KEY;
+Tú
+23:50
+https://www.tutorialspoint.com/git/index.htm
+Tú
+23:52
+https://www.tutorialspoint.com/web_development_tutorials.htm
+Tú
+0:00
+$ git checkout master
+Switched to branch 'master'
+$ git merge iss53
+Merge made by the 'recursive' strategy.
+index.html |
+1 +
+1 file changed, 1 insertion(+)
+Tú
+0:24
+git config --list
+Tú
+0:25
+git config --global user.name "Jerry Mouse"
+Tú
+0:29
+config --global user.email
 >>>>>>> main
