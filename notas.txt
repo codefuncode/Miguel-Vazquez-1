@@ -10,3 +10,5 @@ Detener eveto de formulario  error pass muy largo  registro.php
 
 
 Nuevo cambio 
+
+Cambio 2
