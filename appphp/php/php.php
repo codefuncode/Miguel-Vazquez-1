@@ -1,5 +1,7 @@
 
 <?php
+
+//  Nesesario
 include_once 'coneccion.php';
 include_once 'funciones.php';
 

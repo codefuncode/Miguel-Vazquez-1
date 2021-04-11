@@ -1,5 +1,6 @@
 <?php
 
+//  Nesesarias
 function devuelveinventario($servername, $username, $password, $dbname)
 {
     try {

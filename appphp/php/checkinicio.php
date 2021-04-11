@@ -1,4 +1,6 @@
 <?php
+
+//  Necesario
 //Usa una condicional en el cual si puede detectar un cookie en el navegador.
 if (!isset($_COOKIE['ID'])) {
     if ((isset($_POST['uname'])) && ($_POST['uname'] != "") &&
@@ -35,7 +37,7 @@ if (!isset($_COOKIE['ID'])) {
                 // header("Location: inventario.php");
 
             } else {
-              //Redirijira al usuario al inicio
+                //Redirijira al usuario al inicio
                 header("Location: inicio.php");
 
             }

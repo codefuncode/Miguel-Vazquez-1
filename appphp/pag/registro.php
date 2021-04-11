@@ -35,14 +35,9 @@
     <form action="registro.php" method="post">
 
 <?php
-<<<<<<< HEAD
-//consulta con la base de datos.
-include_once './php/coneccion.php';
-//Condicional en el cual verifica la variable $_POST en registro.
-=======
 
 include_once '../php/coneccion.php';
->>>>>>> b00a4b574f5c993f491a60f5c526c782b2c27cba
+
 if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     (isset($_POST['usuario'])) && ($_POST['usuario'] != "") &&
     (isset($_POST['mail'])) && ($_POST['mail'] != "") &&
