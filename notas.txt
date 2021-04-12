@@ -84,4 +84,4 @@ git config --global user.name "Jerry Mouse"
 Tú
 0:29
 config --global user.email
->>>>>>> main
+
