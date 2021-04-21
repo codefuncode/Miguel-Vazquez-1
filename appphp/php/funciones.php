@@ -194,3 +194,34 @@ function guardar($servername, $username, $password, $dbname)
     // $conn->close();
 
 }
+
+// ===================================================================
+//  Funcion exclusiva para el ficvhero comprar php
+function actualizar_cantidad($id, $cantidad)
+{
+    include 'coneccion.php';
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $conn->prepare("SELECT cantidad FROM inventario WHERE idjuego = $id");
+
+        $stmt->execute();
+        $result         = $stmt->fetchAll();
+        $nueva_cantidad = $result[0]['cantidad'] - $cantidad;
+        // echo $result[0]['cantidad'];
+        // echo " - ";
+        // echo $cantidad;
+        // echo " = ";
+        // echo $nueva_cantidad;
+        $stmt->closeCursor();
+        $stmt2 = $conn->prepare("UPDATE inventario SET cantidad = $nueva_cantidad WHERE idjuego = $id");
+        $stmt2->execute();
+
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+}
+// ===================================================================
