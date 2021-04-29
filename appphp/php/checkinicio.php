@@ -4,6 +4,9 @@
 =======
 //  Necesario
 //Usa una condicional en el cual si puede detectar lo que esta escrito en el campo de input y verifica si el usuario existe en la base de datos.
+<<<<<<< HEAD
+>>>>>>> 3c3e5ada54a812c13ae17c1d61a3585a45f9bd84
+=======
 >>>>>>> 3c3e5ada54a812c13ae17c1d61a3585a45f9bd84
 if (!isset($_COOKIE['ID'])) {
 

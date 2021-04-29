@@ -1,5 +1,6 @@
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 session_start();
 
@@ -8,6 +9,9 @@ session_unset();
 session_destroy();
 
 //  Importante declarar la raíz  o el fichero en especifico en el segundo parámetro
+=======
+//Si la pagina no detecta el cookie, redirije al usuario al inicio, de lo contrario, la pagina se ira al inventario.
+>>>>>>> 3c3e5ada54a812c13ae17c1d61a3585a45f9bd84
 =======
 //Si la pagina no detecta el cookie, redirije al usuario al inicio, de lo contrario, la pagina se ira al inventario.
 >>>>>>> 3c3e5ada54a812c13ae17c1d61a3585a45f9bd84
