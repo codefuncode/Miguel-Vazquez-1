@@ -1,5 +1,6 @@
 <?php
 //  Necesario
+//Muestra los datos que estaran presentes en las tablas de inventario.
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 

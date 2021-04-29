@@ -1,5 +1,6 @@
 <?php
 //  nesesario
+//inserta el juego que se escribio usando los campos de input en la base de datos usando $_POST.
 if ((isset($_POST['nombre'])) && (isset($_POST['estado'])) && (isset($_POST['fecha'])) && (isset($_POST['idclasificacion'])) && (isset($_POST['idplataforma'])) && (isset($_POST['cantidad'])) && (isset($_POST['precio']))) {
 
     try {
