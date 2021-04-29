@@ -9,6 +9,18 @@
      let btnvisa =
          document.getElementById("btnvisa");
      // =========
+     let correo =
+         document.getElementById("correo");
+     // ======
+
+     let display_mail_user =
+         document.getElementById("display_mail_user");
+
+     let nombre_usuario_targeta =
+         document.getElementById("nombre_usuario_targeta");
+
+     let nombre_usuario_resibo =
+         document.getElementById("nombre_usuario_resibo");
 
      seccion_targeta.style.display = "block";
      seccion_resibo.style.display = "none";
@@ -17,6 +29,9 @@
 
          seccion_targeta.style.display = "none";
          seccion_resibo.style.display = "block";
+
+         display_mail_user.innerHTML = correo.value;
+         nombre_usuario_resibo.innerHTML = nombre_usuario_targeta.value;
      });
      let valor_total = 0;
      let precio_total =

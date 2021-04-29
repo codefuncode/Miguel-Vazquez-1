@@ -1,3 +1,6 @@
+<?php
+include "../php/check_cooke.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,48 +14,17 @@
     <script src="../js/jquery.min.js" type="text/javascript">
     </script>
     <!--     <script src="js/jquery.dataTables.min.js" type="text/javascript">
-    </script> -->
+          </script> -->
     <script src="../js/sweetalert.min.js" type="text/javascript">
     </script>
     <!-- -->
     <title>
       GameShark
     </title>
-    <?php if (!isset($_COOKIE["ID"])): ?>
-
-    <?php header("Location: inicio.php");?>
-
-    <?php else: ?>
-    <?php include_once '../php/coneccion.php';?>
   </head>
   <body>
     <!--  Panel de navegación  negro  usando clases de Boostrap para dar estilo al HTML -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              GameShark
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inventario.php">
-              Inventario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="carrito.php">
-              Carrito
-            </a>
-          </li>
-        </ul>
-        <div class="d-flex">
-          <a class="btn btn-danger" href="../php/cooke.php">
-            Salir
-          </a>
-        </div>
-      </div>
-    </nav>
+    <?php include "../comp/nav.php";?>
     <?php include_once '../php/insertarjuego.php'?>
     <div class="container-fluid mb-5 pb-5">
       <div class="row mt-5 ">
@@ -65,7 +37,7 @@
                     Nombre del Juego:
                   </label>
                   <!--  Elemento de entrada de texto input  -->
-                  <input class="form-control" id="nombre" name="nombre" type="text" required/>
+                  <input class="form-control" id="nombre" name="nombre" required="" type="text"/>
                 </div>
               </div>
               <div class="col-12 pb-4 pt-3">
@@ -76,13 +48,13 @@
                 <!--  Dos elementos input radio para seleccionar opción nuevo o usado  -->
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input class="form-check-input" id="estado1" name="estado" type="radio" value="nuevo" required/>
+                    <input class="form-check-input" id="estado1" name="estado" required="" type="radio" value="nuevo"/>
                     Nuevo
                   </label>
                 </div>
                 <div class="form-check-inline">
                   <label class="form-check-label">
-                    <input class="form-check-input" id="estado2" name="estado" type="radio" value="usado" required/>
+                    <input class="form-check-input" id="estado2" name="estado" required="" type="radio" value="usado"/>
                     Usado
                   </label>
                 </div>
@@ -93,7 +65,7 @@
                   <label for="clasificacion">
                     Clasificación:
                   </label>
-                  <select class="form-control" id="clasificacion" name="idclasificacion" required>
+                  <select class="form-control" id="clasificacion" name="idclasificacion" required="">
                     <?php include_once '../php/clasificacion.php'?>
                   </select>
                 </div>
@@ -103,7 +75,7 @@
                 <label for="fecha">
                   Fecha de lanzamiento:
                 </label>
-                <input class="form-control" id="fecha" name="fecha" type="date" required/>
+                <input class="form-control" id="fecha" name="fecha" required="" type="date"/>
               </div>
               <div class="col-12 pb-1">
                 <!--  Elemento select para que el usuario pueda seleccionar la plataforma donde corre el juego  -->
@@ -111,7 +83,7 @@
                   <label for="plataforma">
                     Plataforma:
                   </label>
-                  <select class="form-control" id="plataforma" name="idplataforma" required>
+                  <select class="form-control" id="plataforma" name="idplataforma" required="">
                     <?php include_once '../php/plataforma.php'?>
                   </select>
                 </div>
@@ -121,20 +93,20 @@
                 <label for="cantidad">
                   Cantidad de artículos:
                 </label>
-                <input class="form-control" id="cantidad" max="99" min="1" name="cantidad" type="number" required/>
+                <input class="form-control" id="cantidad" max="99" min="1" name="cantidad" required="" type="number"/>
               </div>
               <!--  Elemento para registrar el precio por unidad del producto -->
               <div class="col-12 pb-4">
                 <label for="precio">
                   Precio por unidad:
                 </label>
-                <input class="form-control" id="precio" max="300" min="1" name="precio" step=".01" type="number" required/>
+                <input class="form-control" id="precio" max="300" min="1" name="precio" required="" step=".01" type="number"/>
               </div>
               <div class="col-12">
                 <input class="btn btn-success" id="guardar" style="width: 100%;" type="submit" value="Guardar"/>
                 <!--   <button  type="button">
-                  Guardar
-                </button> -->
+                        Guardar
+                      </button> -->
               </div>
             </div>
           </form>
@@ -188,9 +160,8 @@
       </div>
     </div>
     <!--     <script src="../js/funciones.js" type="text/javascript">
-    </script>
-    <script src="../js/js.js" type="text/javascript">
-    </script> -->
+          </script>
+          <script src="../js/js.js" type="text/javascript">
+          </script> -->
   </body>
 </html>
-<?php endif;?>

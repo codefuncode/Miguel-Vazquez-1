@@ -1,11 +1,15 @@
 <?php
-if (!isset($_COOKIE["ID"])):
+
+if (!isset($_COOKIE["ID"])) {
+
     header("Location: ../pag/inicio.php");
 
-    ?>
-              <?php else: ?>
+} else {
+    session_start();
 
-    <?php
+    include_once 'coneccion.php';
+}
+
 include "funciones.php";
 $videojuegos_id  = [];
 $videojuegos_qty = [];
@@ -38,7 +42,10 @@ foreach ($_POST["arraydatos"] as $value) {
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <!-- <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/> -->
     <script type="text/javascript" src="../js/comprar.js"></script>
-    <link href="../css/resibo.css" rel="stylesheet" type="text/css"/>
+
+
+     <link href="../css/resibo.css" rel="stylesheet" type="text/css"/>
+     <link href="../css/print.css" rel="stylesheet" media="print" type="text/css" />
     <title>
       Document
     </title>
@@ -62,4 +69,4 @@ foreach ($_POST["arraydatos"] as $value) {
  comprar_seccion();
   </script>
 </html>
-<?php endif;?>
+

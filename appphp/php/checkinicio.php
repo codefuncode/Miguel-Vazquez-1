@@ -1,15 +1,15 @@
 <?php
 
-//  Necesario
-//Usa una condicional en el cual si puede detectar un cookie en el navegador.
 if (!isset($_COOKIE['ID'])) {
+
     if ((isset($_POST['uname'])) && ($_POST['uname'] != "") &&
         (isset($_POST['psw'])) && ($_POST['psw'] != "")) {
 
         $usuario = $_POST['uname'];
         $pass    = $_POST['psw'];
-
+        include 'coneccion.php';
         try {
+
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = $conn->prepare("SELECT * FROM usuario WHERE  usuario= '$usuario' AND pass= '$pass'");
@@ -18,23 +18,20 @@ if (!isset($_COOKIE['ID'])) {
 
             if ($count == 1) {
                 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-                echo $result[0]['idusuario'];
-                $cookie_name  = "ID";
-                $cookie_value = $result[0]['idusuario'];
+                // echo $result[0]['idusuario'];
+                $tipo_usuario  = $result[0]['tipo_usuario'];
+                $cookie_id     = $result[0]['idusuario'];
+                $cookie_nombre = $result[0]['nombre'];
 
-                //determina si el cookie esta disponible. de estar disponible, redirijira al usuario al inventario. De lo contrario, lo envia al inicio.
-                if (!isset($_COOKIE[$cookie_name])) {
-                    setcookie($cookie_name, $cookie_value, time() + 60 * 60 * 24 * 30, "/");
-                    echo "Cookie '" . $cookie_name . "' no set!<br>";
-                    echo "Value is: " . $_COOKIE[$cookie_name];
-                    header("Location: inventario.php");
-                } else {
-                    //Redirijira el usuario al inventario de poder detectar el cookie.
-                    header("Location: inventario.php");
+                setcookie("ID", $cookie_id, time() + 60 * 60 * 24 * 30, "/");
+                setcookie("tipo_usuario", $tipo_usuario, time() + 60 * 60 * 24 * 30, "/");
+                setcookie("nombre ", $cookie_nombre, time() + 60 * 60 * 24 * 30, "/");
 
-                }
+                $_SESSION["tipo"]   = $tipo_usuario;
+                $_SESSION["id"]     = $cookie_id;
+                $_SESSION["nombre"] = $cookie_nombre;
 
-                // header("Location: inventario.php");
+                header("Location: inventario.php");
 
             } else {
                 //Redirijira al usuario al inicio

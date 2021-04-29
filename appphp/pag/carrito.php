@@ -1,10 +1,9 @@
+<?php
+include "../php/check_cooke.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <?php include_once '../php/coneccion.php';?>
-    <?php if (!isset($_COOKIE["ID"])): ?>
-    <?php header("Location: inicio.php");?>
-    <?php else: ?>
     <meta charset="utf-8"/>
     <title>
       Carrito de compras
@@ -37,6 +36,11 @@
           </li>
         </ul>
         <div class="d-flex">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="cursor:default; color:white;">
+              <?php echo "Bienvenido " . $_SESSION["nombre"]; ?>
+            </a>
+          </li>
           <a class="btn btn-danger" href="../php/cooke.php">
             Salir
           </a>
@@ -121,7 +125,6 @@
                   <form action="../php/comprar.php" method="post">
                     <!-- <form> -->
                     <input class="carritobtn continue" id="carritobtn" type="submit"/>
-
                     <div class="datos_hide">
                     </div>
                   </form>
@@ -139,4 +142,3 @@
     </script>
   </body>
 </html>
-<?php endif;?>

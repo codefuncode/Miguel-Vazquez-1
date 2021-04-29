@@ -1,0 +1,38 @@
+@media print {
+    /**/
+    body {
+        margin: 20px;
+    }
+    .zona_fecha {
+        float: right;
+    }
+    td,
+    th {
+        border: 1px solid black;
+        border-top: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+    }
+    table tr th:nth-child(1),
+    table tr td:nth-child(1) {
+        border-left: none;
+    }
+    table {
+        border-collapse: collapse;
+        text-align: left;
+        /*border-top: none;*/
+        /*border-right: none;*/
+        /*border-bottom: 1px solid black;*/
+        /*border-left: none;*/
+    }
+    table tr:nth-child(1) {
+        /*background-color: #b3fff0;*/
+    }
+    table th {
+        padding: 10px;
+        text-align: center;
+    }
+    table td {
+        padding: 5px;
+    }
+}

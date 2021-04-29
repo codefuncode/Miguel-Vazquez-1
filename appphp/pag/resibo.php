@@ -34,14 +34,14 @@
         <div class="" style="clear: both;text-align: left; padding-top: 20px;">
           <p style="border-bottom: 1px solid gray;">
             Vendido a:
-            <span>
-              xxxx
+            <span id="nombre_usuario_resibo">
+
             </span>
           </p>
           <p style="border-bottom: 1px solid gray;">
             Email:
-            <span>
-              xxxx
+            <span id="display_mail_user">
+
             </span>
           </p>
           <p>
