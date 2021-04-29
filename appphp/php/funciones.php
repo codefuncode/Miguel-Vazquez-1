@@ -1,6 +1,7 @@
 <?php
 
 //  Nesesarias
+//funcion que enseña los datos disponibles en la tabla de inventario
 function devuelveinventario($servername, $username, $password, $dbname)
 {
     try {
@@ -34,7 +35,7 @@ function devuelveinventario($servername, $username, $password, $dbname)
     }
     $conn = null;
 }
-
+//funcion que muestra las clasificaciones en inventario.
 function clasificacion($servername, $username, $password, $dbname)
 {
 
@@ -84,6 +85,7 @@ function clasificacion($servername, $username, $password, $dbname)
     // }
 
 }
+//funcion que muestra las plataformas en inventario.
 function plataforma($servername, $username, $password, $dbname)
 {
     try {
@@ -111,7 +113,7 @@ function plataforma($servername, $username, $password, $dbname)
     }
     $conn = null;
 }
-
+//funcion que guarda lo que se escribe en los campos de input y se almacena en la base de datos para enseñarlo en el inventario.
 function guardar($servername, $username, $password, $dbname)
 {
     // $servername = "sql201.epizy.com";

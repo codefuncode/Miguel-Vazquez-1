@@ -1,7 +1,7 @@
 <?php
 
 //  Necesario
-//Usa una condicional en el cual si puede detectar un cookie en el navegador.
+//Usa una condicional en el cual si puede detectar lo que esta escrito en el campo de input y verifica si el usuario existe en la base de datos.
 if (!isset($_COOKIE['ID'])) {
     if ((isset($_POST['uname'])) && ($_POST['uname'] != "") &&
         (isset($_POST['psw'])) && ($_POST['psw'] != "")) {
