@@ -5,20 +5,20 @@ include "coneccion.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 
 
-	<title>Document</title>
-	    <link href="../img/144100970_1017876292074905_5821562716646159982_n.png" rel="icon"/>
+  <title>Eliminar</title>
+      <link href="../img/144100970_1017876292074905_5821562716646159982_n.png" rel="icon"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="../css/carrito.css" rel="stylesheet"/>
-    	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="../js/jquery.min.js" type="text/javascript">
     </script>
 </head>
 <body style="padding: 50px;">
-	   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <div class="container-fluid">
         <ul class="navbar-nav">
           <li class="nav-item active">
@@ -51,7 +51,8 @@ include "coneccion.php";
     </nav>
 <?php
 
-// echo $_GET["idusuario"];
+//  Elimina el usuario  con el id  y verifica que el tipo de
+// usuario no sea administrador y lo borrara
 if (isset($_GET["tipo_usuario"]) && $_GET["tipo_usuario"] !== 'admin') {
 
     if (isset($_GET["idusuario"])) {
@@ -67,10 +68,7 @@ if (isset($_GET["tipo_usuario"]) && $_GET["tipo_usuario"] !== 'admin') {
 
             $stmt->execute();
             $count = $stmt->rowCount();
-            // echo '<br/>';
-            // echo $count;
-            // echo '<br/>';
-
+            //  Respuesta
             if ($count == 1) {
                 echo '<div class="w3-panel w3-pale-green w3-bottombar w3-border-green w3-border"><p>';
                 echo 'El registro se elimino exitosamente';
@@ -93,8 +91,6 @@ if (isset($_GET["tipo_usuario"]) && $_GET["tipo_usuario"] !== 'admin') {
 if ($_GET["tipo_usuario"] == "admin") {
     echo 'Esto es una administrador ';
 }
-
-// header('Location: ver_usuarios.php');
 
 ?>
 

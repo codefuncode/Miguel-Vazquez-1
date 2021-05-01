@@ -26,7 +26,7 @@
       <?php endif;?>
     </ul>
     <div class="d-flex">
-      <?php if ($_SESSION["tipo"] == "admin"): ?>
+      <?php if ($_SESSION["tipo"]): ?>
       <li class="nav-item active">
         <a class="nav-link" href="#" style="cursor:default; color:white;">
           <?php echo "Bienvenido " . $_SESSION["nombre"]; ?>

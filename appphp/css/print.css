@@ -1,38 +1,71 @@
-@media print {
-    /**/
-    body {
-        margin: 20px;
-    }
-    .zona_fecha {
-        float: right;
-    }
-    td,
-    th {
-        border: 1px solid black;
-        border-top: none;
-        border-right: none;
-        border-bottom: 1px solid black;
-    }
-    table tr th:nth-child(1),
-    table tr td:nth-child(1) {
-        border-left: none;
-    }
-    table {
-        border-collapse: collapse;
-        text-align: left;
-        /*border-top: none;*/
-        /*border-right: none;*/
-        /*border-bottom: 1px solid black;*/
-        /*border-left: none;*/
-    }
-    table tr:nth-child(1) {
-        /*background-color: #b3fff0;*/
-    }
-    table th {
-        padding: 10px;
-        text-align: center;
-    }
-    table td {
-        padding: 5px;
-    }
-}
+ * {
+     box-sizing: border-box;
+ }
+ .borde {
+     border: none;
+     border-radius: 0px;
+ }
+ .cabecera {
+     height: 300px;
+     margin-bottom: 0px;
+ }
+ .cuerpo {
+     padding: 0px;
+     /*padding-top: 25px;*/
+     /*padding-bottom: 25px;*/
+ }
+ .cuerpo>div {
+     /*padding-top: 25px;*/
+     width: 100%;
+     margin: 0px;
+     padding-bottom: 25px;
+ }
+ .resibo {
+     margin: auto !important;
+     width: 100% !important;
+     padding-top: 30px;
+     -webkit-box-shadow: 1px 0px 50px 16px rgba(0, 0, 0, 0.36);
+     box-shadow: 1px 0px 50px 16px rgba(0, 0, 0, 0.36);
+ }
+ .zona_fecha {
+     float: right;
+ }
+ .zona_fecha {
+     clear: both;
+     width: 250px;
+     margin: 20px 10px;
+ }
+ .resibo {
+     background-color: red;
+     padding: 25px;
+     border-radius: 15px;
+ }
+ td,
+ th {
+     border: 1px solid black;
+     border-top: none;
+     border-right: none;
+     border-bottom: 1px solid black;
+ }
+ table tr th:nth-child(1),
+ table tr td:nth-child(1) {
+     border-left: none;
+ }
+ table {
+     border-collapse: collapse;
+     text-align: left;
+     /*border-top: none;*/
+     /*border-right: none;*/
+     /*border-bottom: 1px solid black;*/
+     /*border-left: none;*/
+ }
+ table tr:nth-child(1) {
+     background-color: #b3fff0;
+ }
+ table th {
+     padding: 10px;
+     text-align: center;
+ }
+ table td {
+     padding: 5px;
+ }

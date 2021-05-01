@@ -26,10 +26,13 @@ if (!isset($_COOKIE['ID'])) {
                 $cookie_id     = $result[0]['idusuario'];
                 $cookie_nombre = $result[0]['nombre'];
 
+                // https://www.php.net/manual/en/function.setcookie.php#110193
+                //  Configuración del tiempo de la coooke
                 setcookie("ID", $cookie_id, time() + 60 * 60 * 24 * 30, "/");
                 setcookie("tipo_usuario", $tipo_usuario, time() + 60 * 60 * 24 * 30, "/");
                 setcookie("nombre ", $cookie_nombre, time() + 60 * 60 * 24 * 30, "/");
 
+                //  Valores a la  variable matriz de sesión
                 $_SESSION["tipo"]   = $tipo_usuario;
                 $_SESSION["id"]     = $cookie_id;
                 $_SESSION["nombre"] = $cookie_nombre;

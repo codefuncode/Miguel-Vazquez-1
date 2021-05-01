@@ -24,22 +24,6 @@ function seleccionar_juegos($param_id, $videojuegos_qty)
         $stmt = $conn->prepare("SELECT * FROM inventario WHERE idjuego IN ($param_id)");
 
         $stmt->execute();
-        //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        //     $result = $stmt->fetchAll();
-        //     for ($i = 0; $i < count($result); $i++) {
-
-        //         $row[$i]["idjuego"];
-        //         $row[$i]"nombre"];
-        //     $row[$i]["estado"];
-        //     $row[$i]["fecha"];
-        //     $row[$i]["idclasificacion"];
-        //     $row[$i]["idplataforma"];
-        //     $row[$i]["cantidad"];
-        //     $row[$i]["precio"];
-
-        // }
-
-        // ============================================
 
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

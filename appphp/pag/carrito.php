@@ -16,37 +16,7 @@ include "../php/check_cooke.php";
     </script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              GameShark
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inventario.php">
-              Inventario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="carrito.php">
-              Carrito
-            </a>
-          </li>
-        </ul>
-        <div class="d-flex">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" style="cursor:default; color:white;">
-              <?php echo "Bienvenido " . $_SESSION["nombre"]; ?>
-            </a>
-          </li>
-          <a class="btn btn-danger" href="../php/cooke.php">
-            Salir
-          </a>
-        </div>
-      </div>
-    </nav>
+    <?php include "../comp/nav.php";?>
     <div class="container-fluid">
       <div class="row">
         <div class="div">
@@ -79,6 +49,7 @@ include "../php/check_cooke.php";
               </tr>
             </thead>
             <tbody id="displaydatos">
+              <!--  Instrucciones encargadas  de  conectar y construir una tabla con los datos almacenados  en el  servidor  -->
               <?php include_once '../php/datostabla.php';?>
             </tbody>
           </table>
@@ -122,6 +93,9 @@ include "../php/check_cooke.php";
                   </span>
                 </li>
                 <li class="totalRow">
+                  <!--  Formulario  encargado  recopilar y  los datos de las selecciones del usuario. Estas selecciones son los juegos que desea comprar. Los mismos son generados con JavaScript  de manera dinámica .
+
+                  No los vemos aquí pero se generaran a a medida que el usuario interactúa con la interfaz -->
                   <form action="../php/comprar.php" method="post">
                     <!-- <form> -->
                     <input class="carritobtn continue" id="carritobtn" type="submit"/>

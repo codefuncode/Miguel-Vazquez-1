@@ -50,20 +50,15 @@ include "coneccion.php";
       </div>
     </nav>
 <div class="" style="padding: 50px;">
-      <?php
 
-// echo $_GET["idusuario"];
-// echo '<br/>';
-// echo $_GET["tipo_usuario"];
-// echo '<br/>';
-?>
 </div>
       <form  action="editar_exe.php" method="get">
     <div class="col-4 botones_ver-usuarios">
       <?php
+
 if (isset($_GET["idusuario"])) {
     try {
-
+        //  Se recibe el id del usuario para editar todos sus campos
         $id = $_GET["idusuario"];
         // echo $id;
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -71,7 +66,9 @@ if (isset($_GET["idusuario"])) {
         $stmt = $conn->prepare("SELECT * FROM  usuario WHERE idusuario= :idusuario");
         $stmt->bindParam(':idusuario', $id, PDO::PARAM_INT);
         $stmt->execute();
+        //  Construye el formulario de edición  para los datos de los usuarios
         while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
             $idusuario    = $data['idusuario'];
             $nombre       = $data['nombre'];
             $usuario      = $data['usuario'];
@@ -81,19 +78,19 @@ if (isset($_GET["idusuario"])) {
 
             echo "<div class='input-group flex-nowrap'>";
             echo '<label>nombre </label>';
-            echo " <input name='nombre' aria-describedby='addon-wrapping' aria-label='Username' class='form-control' placeholder='Nombre' type='text' value='$nombre'/>";
+            echo "<input name='nombre' aria-describedby='addon-wrapping' aria-label='Username' class='form-control' placeholder='Nombre' type='text' value='$nombre'/>";
 
-            echo " </div>";
+            echo "</div>";
             echo "<div class='input-group flex-nowrap'>";
             echo '<label>usuario </label>';
             echo " <input name='usuario' aria-describedby='addon-wrapping' aria-label='Username' class='form-control' placeholder='Nombre' type='text' value='$usuario'/>";
 
-            echo " </div>";
+            echo "</div>";
             echo "<div class='input-group flex-nowrap'>";
             echo '<label>correo </label>';
             echo " <input name='correo' aria-describedby='addon-wrapping' aria-label='Username' class='form-control' placeholder='Nombre' type='text' value='$correo'/>";
 
-            echo " </div>";
+            echo "</div>";
             echo "<div class='input-group flex-nowrap'>";
             echo '<label>pass </label>';
             echo " <input name='pass' aria-describedby='addon-wrapping' aria-label='Username' class='form-control' placeholder='Nombre' type='text' value='$pass'/>";
@@ -116,26 +113,7 @@ if (isset($_GET["idusuario"])) {
 <br/>
     <input type="submit" class="w3-button w3-green" value="Guardar" >
     </div>
-
-
-
 </form>
 
-
-<!--     <div class="col-4 botones_ver-usuarios">
-
-      <div class="input-group flex-nowrap">
-        <input aria-describedby="addon-wrapping" aria-label="Username" class="form-control" placeholder="Usuario" type="text"/>
-      </div>
-      <div class="input-group flex-nowrap">
-        <input aria-describedby="addon-wrapping" aria-label="Username" class="form-control" placeholder="correo" type="text"/>
-      </div>
-      <div class="input-group flex-nowrap">
-        <input aria-describedby="addon-wrapping" aria-label="Username" class="form-control" placeholder="pass" type="text"/>
-      </div>
-      <div class="input-group flex-nowrap">
-        <input aria-describedby="addon-wrapping" aria-label="Username" class="form-control" placeholder="tipo_usuario" type="text"/>
-      </div>
-    </div> -->
   </body>
 </html>

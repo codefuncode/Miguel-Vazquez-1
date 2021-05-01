@@ -41,9 +41,9 @@ session_start();
 
 
     <?php
-//establece la connecion de la base de datos
+//Establece la conexión de la base de datos
 include_once '../php/coneccion.php';
-
+//  Verifica sis existe  una cooke  y ademas  y establece variables de inicio de sesión
 include_once '../php/checkinicio.php';
 
 ?>
