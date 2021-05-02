@@ -38,8 +38,12 @@ function actualizar_cantidad($id, $cantidad)
         $stmt = $conn->prepare("SELECT cantidad FROM inventario WHERE idjuego = $id");
 
         $stmt->execute();
-        $result         = $stmt->fetchAll();
-        $nueva_cantidad = $result[0]['cantidad'] - $cantidad;
+        $result = $stmt->fetchAll();
+        if ($result[0]['cantidad'] > 0) {
+            $nueva_cantidad = $result[0]['cantidad'] - $cantidad;
+        } else {
+            $nueva_cantidad = 0;
+        }
 
         $stmt->closeCursor();
         $stmt2 = $conn->prepare("UPDATE inventario SET cantidad = $nueva_cantidad WHERE idjuego = $id");
@@ -63,12 +67,13 @@ function actualizar_cantidad($id, $cantidad)
     <link href="../img/144100970_1017876292074905_5821562716646159982_n.png" rel="icon"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!-- <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
     <script type="text/javascript" src="../js/comprar.js"></script>
      <link href="../css/resibo.css" rel="stylesheet" type="text/css"/>
      <link href="../css/print.css" rel="stylesheet" media="print" type="text/css" />
     <title>
-      Document
+      Comprar
     </title>
     <style type="text/css">
       .input-group{
@@ -80,6 +85,48 @@ function actualizar_cantidad($id, $cantidad)
     </style>
   </head>
   <body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          GameShark
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pag/inventario.php">
+          Inventario
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pag/carrito.php">
+          Carrito
+        </a>
+      </li>
+      <?php if ($_SESSION["tipo"] == "admin"): ?>
+      <li class="nav-item active">
+        <a class="nav-link" href="ver_usuarios.php" style="cursor:default; color:white;">
+          Administrar usuarios
+        </a>
+      </li>
+      <?php else: ?>
+      <?php endif;?>
+    </ul>
+    <div class="d-flex">
+      <?php if ($_SESSION["tipo"]): ?>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="cursor:default; color:white;">
+          <?php echo "Bienvenido " . $_SESSION["nombre"]; ?>
+        </a>
+      </li>
+      <?php else: ?>
+      <?php endif;?>
+      <a class="btn btn-danger" href="cooke.php">
+        Salir
+      </a>
+    </div>
+  </div>
+</nav>
 <?php include "../pag/pago.php";?>
 
 <?php include "../pag/resibo.php";?>

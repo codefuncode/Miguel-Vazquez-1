@@ -11,6 +11,7 @@ include "../php/check_cooke.php";
     <link href="../img/144100970_1017876292074905_5821562716646159982_n.png" rel="icon"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <link href="../css/carrito.css" rel="stylesheet"/>
     <script src="../js/jquery.min.js" type="text/javascript">
     </script>
@@ -98,7 +99,7 @@ include "../php/check_cooke.php";
                   No los vemos aquí pero se generaran a a medida que el usuario interactúa con la interfaz -->
                   <form action="../php/comprar.php" method="post">
                     <!-- <form> -->
-                    <input class="carritobtn continue" id="carritobtn" type="submit"/>
+                    <input class="carritobtn continue w3-button w3-green w3-round-xxlarge w3-padding-large" id="carritobtn" type="submit" value="Comprar Ahora" />
                     <div class="datos_hide">
                     </div>
                   </form>

@@ -3,6 +3,10 @@
   y  esta misma sección  -->
 <!-- ==================================================================== -->
 <div id="seccion_resibo" style="margin-top: 100px; margin-bottom: 100px;">
+   <div class="w3-container w3-center" >
+     <button onclick="window.print()" class="w3-btn w3-black" style="margin: -100px 0px 25px 0px;"> <i class="fa fa-print"></i> Imprimir</button>
+  </div>
+
   <div class="w3-container w3-center resibo">
     <div class="">
       <div class="w3-container cabecera borde">
@@ -81,4 +85,7 @@
       </div>
     </div>
   </div>
+
 </div>
+
+
