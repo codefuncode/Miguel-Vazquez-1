@@ -2,23 +2,26 @@
 <!--  Id se emplea para jugar con las secciones datos de la tarjeta
   y  esta misma sección  -->
 <!-- ==================================================================== -->
-<div id="seccion_resibo" style="margin-top: 100px; margin-bottom: 100px;">
-   <div class="w3-container w3-center" >
-     <button onclick="window.print()" class="w3-btn w3-black" style="margin: -100px 0px 25px 0px;"> <i class="fa fa-print"></i> Imprimir</button>
+<div id="seccion_resibo" class="recibo_seccion_resibo" >
+  <div class="w3-container w3-center">
+    <button class="w3-btn w3-black recibo_btn_print" onclick="window.print()">
+      <i class="fa fa-print">
+      </i>
+      Imprimir
+    </button>
   </div>
-
   <div class="w3-container w3-center resibo">
     <div class="">
       <div class="w3-container cabecera borde">
         <div class="">
-          <div class="" style="display: inline-block; width: 45%; float: left;">
-            <img alt="" src="../img/144100970_1017876292074905_5821562716646159982_n.png" style="width: 70px; height: 70px; border-radius: 50px; float: left;"/>
-            <h2 style="text-align: left; margin-top: 15px; padding-top: 10px; font-size: 50px;">
+          <div class="recibo_ing_contenedor">
+            <img alt="" class="img_recibo" src="../img/144100970_1017876292074905_5821562716646159982_n.png"/>
+            <h2 class="recibo_titulo">
               GameShark
             </h2>
           </div>
-          <div class="" style="display: inline-block; width: 45%; float: right; ">
-            <div class="zona_fecha borde" style="text-align: left; padding: 10px;">
+          <div class="recibo_fecha_contenedor">
+            <div class="zona_fecha borde recibo_fecha">
               <span>
                 Fecho:
                 <span>
@@ -35,17 +38,15 @@
             </div>
           </div>
         </div>
-        <div class="" style="clear: both;text-align: left; padding-top: 20px;">
+        <div class="recibo_datos_comprador_contenedor">
           <p style="border-bottom: 1px solid gray;">
             Vendido a:
             <span id="nombre_usuario_resibo">
-
             </span>
           </p>
           <p style="border-bottom: 1px solid gray;">
             Email:
             <span id="display_mail_user">
-
             </span>
           </p>
           <p>
@@ -85,7 +86,4 @@
       </div>
     </div>
   </div>
-
 </div>
-
-

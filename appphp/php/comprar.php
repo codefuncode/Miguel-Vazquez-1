@@ -72,6 +72,9 @@ function actualizar_cantidad($id, $cantidad)
     <script type="text/javascript" src="../js/comprar.js"></script>
      <link href="../css/resibo.css" rel="stylesheet" type="text/css"/>
      <link href="../css/print.css" rel="stylesheet" media="print" type="text/css" />
+     <style type="text/css">
+
+     </style>
     <title>
       Comprar
     </title>
