@@ -15,7 +15,7 @@
       <div class="w3-container cabecera borde">
         <div class="">
           <div class="recibo_ing_contenedor">
-            <img alt="" class="img_recibo" src="../img/144100970_1017876292074905_5821562716646159982_n.png"/>
+            <img alt="" id="img_recibo" class="img_recibo" src="../img/144100970_1017876292074905_5821562716646159982_n.png"/>
             <h2 class="recibo_titulo">
               GameShark
             </h2>

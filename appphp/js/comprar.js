@@ -49,4 +49,37 @@
 
      resibo_preciototal.innerHTML = "$ " + valor_total;
      valor_total = 0;
+
+     var getBrowserInfo = function() {
+         var ua = navigator.userAgent,
+             tem,
+             M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+         if (/trident/i.test(M[1])) {
+             tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+             return 'IE ' + (tem[1] || '');
+         }
+         if (M[1] === 'Chrome') {
+             tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+             if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+         }
+         M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+         if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+         return M.join(' ');
+     };
+
+     // console.log(getBrowserInfo());
+
+     var res = getBrowserInfo().split(" ");
+     console.log(res);
+
+     if (res.includes("Opera")) {
+         let img_recibo = document.getElementById("img_recibo");
+         img_recibo.style.width = "70px";
+         img_recibo.style.height = "70px";
+         img_recibo.style.border = "50px";
+         img_recibo.style.float = "left";
+
+     } else {
+
+     }
  }

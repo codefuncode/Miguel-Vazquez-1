@@ -366,3 +366,6 @@ Object.size = function(obj) {
      var person = {firstName:"John", lastName:"Doe", age:46};  
       var person = {firstName:"John", lastName:"Doe", age:46};  
        var person = {firstName:"John", lastName:"Doe", age:46};
+
+
+       console.log((window.navigator.userAgent);
