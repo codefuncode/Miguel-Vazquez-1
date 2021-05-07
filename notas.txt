@@ -88,3 +88,8 @@ config --global user.email
 notas.txt
 
 https://stackoverflow.com/questions/14050812/how-to-post-an-associative-array-in-php
+
+
+
+Inprimir lista de usuarios 
+Inprimir lista de imprimir dattos de juegos por plataforma

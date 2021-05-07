@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -47,6 +47,11 @@
               Administrar usuarios
             </a>
           </li>
+            </li> <li class="nav-item active">
+        <a class="nav-link" href="../pag/reporte.php" style="cursor:default; color:white;">
+          Reportes
+        </a>
+      </li>
           <?php else: ?>
           <?php endif;?>
         </ul>

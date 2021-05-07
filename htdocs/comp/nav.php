@@ -21,6 +21,10 @@
         <a class="nav-link" href="../php/ver_usuarios.php" style="cursor:default; color:white;">
           Administrar usuarios
         </a>
+      </li> <li class="nav-item active">
+        <a class="nav-link" href="reporte.php" style="cursor:default; color:white;">
+          Reportes
+        </a>
       </li>
       <?php else: ?>
       <?php endif;?>
