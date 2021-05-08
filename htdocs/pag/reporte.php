@@ -64,7 +64,7 @@ include_once '../php/coneccion.php';
             <h3>
               Usuarios
             </h3>
-            <select class="form-control" id="clasificacion" name="tipo_usuario" required="">
+            <select class="form-control" id="reporte_tipo_usuario" name="tipo_usuario" required="">
               <option selected="" value="0">
               </option>
               <option value="usuario">
