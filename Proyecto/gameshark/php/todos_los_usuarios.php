@@ -36,10 +36,16 @@ try {
         echo $data['tipo_usuario'];
         echo '</td>';
 
-        echo '<td>';
-        echo '<form  action="editar.php" method="get">';
         // =============================
         //  Botón para editar recupera el ID del récord de turno.
+        //  Recuperamos también el tipo de usuario y así  evitar la
+        //  eliminación del administrador en el momento de que se ejecute
+        // la consulta relacionada con este formulario
+
+        echo '<td>';
+        // Formulario ediitar
+        echo '<form  action="editar.php" method="get">';
+
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";
         echo "<input type='hidden'name='tipo_usuario'value='$tipo_usuario'/>";
         echo "<input type='submit' class='btn btn-warning'value='Editar'> ";
@@ -49,9 +55,8 @@ try {
         echo '</td>';
 
         echo '<td>';
-
+        //  Formularioo eliminar
         echo '<form  action="eliminar.php" method="get">';
-        //  Botón para eliminar recupera el ID del récord de turno.
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";
         echo "<input type='hidden'name='tipo_usuario'value='$tipo_usuario'/>";
 
