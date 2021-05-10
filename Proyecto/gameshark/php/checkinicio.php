@@ -1,7 +1,9 @@
 <?php
 
 //  Necesario
-//Usa una condicional en el cual si puede detectar lo que esta escrito en el campo de input y verifica si el usuario existe en la base de datos.
+// Usa una condicional en el cual si puede detectar lo que
+// esta escrito en el campo de input y verifica si el
+// usuario existe en la base de datos.
 
 if (!isset($_COOKIE['ID'])) {
 
@@ -21,7 +23,7 @@ if (!isset($_COOKIE['ID'])) {
 
             if ($count == 1) {
                 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-
+                // echo $result[0]['idusuario'];
                 $tipo_usuario  = $result[0]['tipo_usuario'];
                 $cookie_id     = $result[0]['idusuario'];
                 $cookie_nombre = $result[0]['nombre'];
@@ -40,11 +42,10 @@ if (!isset($_COOKIE['ID'])) {
                 header("Location: inventario.php");
 
             } else {
-                //Redirijira al usuario al inicio
+                // Redirijira al usuario al inicio
                 header("Location: inicio.php");
 
             }
-
 
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -52,7 +53,7 @@ if (!isset($_COOKIE['ID'])) {
         $conn = null;
 
     } else {
-        // header("Location: registro.php");
+
     }
 } else {
 
