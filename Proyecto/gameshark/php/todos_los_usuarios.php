@@ -1,4 +1,6 @@
 <?php
+
+// Coneccion con la base de datos
 include_once "coneccion.php";
 
 try {
@@ -33,19 +35,26 @@ try {
         echo '<td>';
         echo $data['tipo_usuario'];
         echo '</td>';
+
         echo '<td>';
         echo '<form  action="editar.php" method="get">';
+        // =============================
+        //  Botón para editar recupera el ID del récord de turno.
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";
         echo "<input type='hidden'name='tipo_usuario'value='$tipo_usuario'/>";
         echo "<input type='submit' class='btn btn-warning'value='Editar'> ";
 
         echo '</form>';
+
         echo '</td>';
+
         echo '<td>';
+
         echo '<form  action="eliminar.php" method="get">';
+        //  Botón para eliminar recupera el ID del récord de turno.
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";
         echo "<input type='hidden'name='tipo_usuario'value='$tipo_usuario'/>";
-        echo "<input type='submit' class='btn btn-danger'value='Eliminar'> ";
+
         echo '</form>';
         echo '</td>';
 
