@@ -1,0 +1,8 @@
+
+borracampos();
+
+
+getdata();
+guardar();
+
+devuelveinventario();

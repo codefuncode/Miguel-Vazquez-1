@@ -68,9 +68,17 @@ include "../php/check_cooke.php";
         </div>
       </div>
     </nav>
-    <div class="reporte_tabla_contenedor" id="reporte_tabla_contenedor" >
-      <?php include "../php/reporte_usuarios_sript.php";?>
+    <div class="" style="padding-top: 10px;">
+      <div class="w3-container w3-center">
+        <button class="w3-btn w3-black recibo_btn_print" onclick="window.print()">
+          <i class="fa fa-print">
+          </i>
+          Imprimir
+        </button>
+      </div>
+    </div>
+    <div class="reporte_tabla_contenedor" id="reporte_tabla_contenedor">
+      <?php include "../php/reporte_inventerio_script.php";?>
     </div>
   </body>
 </html>
-

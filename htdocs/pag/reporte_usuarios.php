@@ -78,7 +78,7 @@ include "../php/check_cooke.php";
       </div>
     </div>
     <div class="reporte_tabla_contenedor" id="reporte_tabla_contenedor">
-      <?php include "../php/reporte_inventerio_script.php";?>
+      <?php include "../php/reporte_usuarios_script.php";?>
     </div>
   </body>
 </html>

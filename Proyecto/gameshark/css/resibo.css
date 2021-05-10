@@ -1,0 +1,110 @@
+ * {
+     box-sizing: border-box;
+ }
+ .borde {
+     border: 5px solid grey;
+     border-radius: 5px;
+ }
+ .cabecera {
+     height: 300px;
+     margin-bottom: 20px;
+ }
+ .cuerpo {
+     padding: 0px;
+     /*padding-top: 25px;*/
+     /*padding-bottom: 25px;*/
+ }
+ .cuerpo>div {
+     /*padding-top: 25px;*/
+     width: 100%;
+     margin: 0px;
+     padding-bottom: 25px;
+ }
+ .resibo {
+     margin: auto !important;
+     width: 50%;
+     padding-top: 30px;
+     -webkit-box-shadow: 1px 0px 50px 16px rgba(0, 0, 0, 0.36);
+     box-shadow: 1px 0px 50px 16px rgba(0, 0, 0, 0.36);
+ }
+ .zona_fecha {
+     float: right;
+ }
+ .zona_fecha {
+     clear: both;
+     width: 250px;
+     margin: 20px 10px;
+ }
+ .resibo {
+     background-color: #FFFFCC;
+     padding: 25px;
+     border-radius: 15px;
+ }
+ td,
+ th {
+     border: 1px solid black;
+     border-top: none;
+     border-right: none;
+     border-bottom: 1px solid black;
+ }
+ table tr th:nth-child(1),
+ table tr td:nth-child(1) {
+     border-left: none;
+ }
+ table {
+     border-collapse: collapse;
+     text-align: left;
+     /*border-top: none;*/
+     /*border-right: none;*/
+     /*border-bottom: 1px solid black;*/
+     /*border-left: none;*/
+ }
+ table tr:nth-child(1) {
+     background-color: #b3fff0;
+ }
+ table th {
+     padding: 10px;
+     text-align: center;
+ }
+ table td {
+     padding: 5px;
+ }
+ .img_recibo {
+     width: 70px;
+     height: 70px;
+     border-radius: 50px;
+     float: left;
+ }
+ .recibo_titulo {
+     text-align: left;
+     margin-top: 15px;
+     padding-top: 10px;
+     font-size: 50px;
+ }
+ .recibo_fecha {
+     text-align: left;
+     padding: 10px;
+ }
+ .recibo_btn_print {
+     margin: -100px 0px 25px 0px;
+ }
+ .recibo_seccion_resibo {
+     margin-top: 100px;
+     margin-bottom: 100px;
+     display: none;
+ }
+ .recibo_ing_contenedor {
+     display: inline-block;
+     width: 45%;
+     float: left;
+ }
+ .recibo_fecha_contenedor {
+     display: inline-block;
+     width: 45%;
+     float: right;
+ }
+ .recibo_datos_comprador_contenedor {
+     clear: both;
+     text-align: left;
+     padding-top: 20px;
+ }

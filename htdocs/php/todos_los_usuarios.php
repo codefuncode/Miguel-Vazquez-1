@@ -33,6 +33,7 @@ try {
         echo '<td>';
         echo $data['tipo_usuario'];
         echo '</td>';
+
         echo '<td>';
         echo '<form  action="editar.php" method="get">';
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";

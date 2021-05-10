@@ -1,50 +1,91 @@
 
 <?php
 
+$_POST['estado']          = "usado";
+$_POST['idclasificacion'] = 1;
+$_POST['idplataforma']    = 1;
+
 if ((isset($_POST['estado'])) &&
     (isset($_POST['idclasificacion'])) &&
     (isset($_POST['idplataforma']))) {
 
-    include "../php/coneccion.php";
+    include "coneccion.php";
 
     $estado          = $_POST['estado'];
     $idclasificacion = $_POST['idclasificacion'];
     $idplataforma    = $_POST['idplataforma'];
+
     try {
 
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql  = "";
-        $stmt = $conn->prepare("SELECT * FROM `inventario` WHERE  estado= :estado AND  idclasificacion= :idclasificacion AND  idplataforma= :idplataforma;");
+        // $sql =
+        //     "SELECT inventario.idjuego,
+        //     inventario.cantidad,
+        //     inventario.estado,
+        //     inventario.nombre as nombre_inventario,
+        //     inventario.precio,
+        //     clasificacion.nombre as nombre_clasificacion,
+        //     plataforma.nombre as nombre_plataforma
+        //     FROM inventario , clasificacion , plataforma
+        //     WHERE clasificacion.idclasificacion = $idclasificacion
+        //     AND inventario.estado = '$estado'
+        //     AND plataforma.idplataforma = $idplataforma
+        //     group by inventario.idjuego";
+
+        $sql =
+            "SELECT inventario.idjuego,
+            inventario.cantidad,
+            inventario.estado,
+            inventario.nombre as nombre_inventario,
+            inventario.precio,
+            clasificacion.nombre as nombre_clasificacion,
+            plataforma.nombre as nombre_plataforma
+            FROM inventario , clasificacion , plataforma
+            WHERE inventario.idclasificacion = :idclasificacion
+            AND inventario.estado = :estado
+            AND inventario.idplataforma = :idplataforma
+            group by inventario.idjuego";
+
+        $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(":estado", $estado, PDO::PARAM_STR);
-        $stmt->bindParam(":idclasificacion", $idclasificacion, PDO::PARAM_STR);
-        $stmt->bindParam(":idplataforma", $idplataforma, PDO::PARAM_STR);
+        $stmt->bindParam(":idclasificacion", $idclasificacion, PDO::PARAM_INT);
+        $stmt->bindParam(":idplataforma", $idplataforma, PDO::PARAM_INT);
         $stmt->execute();
 
         echo '<table class="w3-table-all w3-hoverable">';
         echo '<thead>';
         echo '
             <tr class="w3-black">
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Tipo de usuario</th>
-            <th>Nombre de usuario</th>
+            <th>id</th>
+            <th>Nombe del juego</th>
+            <th>Estado</th>
+            <th>Plataforma</th>
+            <th>Clasificacion</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
             </tr>';
         echo '</thead>';
         while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-            $nombre       = $data['nombre'];
-            $correo       = $data['correo'];
-            $tipo_usuario = $data['tipo_usuario'];
-            $usuario      = $data['usuario'];
+            $id                   = $data['idjuego'];
+            $nombre_inventario    = $data['nombre_inventario'];
+            $nombre_clasificacion = $data['nombre_clasificacion'];
+            $nombre_plataforma    = $data['nombre_plataforma'];
+            // $idjuego              = $data['idjuego'];
+            $cantidad = $data['cantidad'];
+            $estado   = $data['estado'];
+            $precio   = $data['precio'];
 
             echo "<tr>";
-            echo "<td> $nombre </td>";
-            echo "<td> $correo </td>";
-            echo "<td> $tipo_usuario </td>";
-            echo "<td> $usuario </td>";
+            echo "<td> $id </td>";
+            echo "<td> $nombre_inventario </td>";
+            echo "<td> $estado </td>";
+            echo "<td> $nombre_plataforma </td>";
+            echo "<td> $nombre_clasificacion </td>";
+            echo "<td> $cantidad </td>";
+            echo "<td> $precio </td>";
             echo "</tr>";
 
         }
@@ -55,44 +96,3 @@ if ((isset($_POST['estado'])) &&
     $conn = null;
 
 }
-// ======================
-// inventario.
-
-// inventario.cantidad
-// inventario.estado
-// inventario.idclasificacion
-// inventario.idplataforma
-// inventario.nombre
-// inventario.precio
-// ======================
-
-// ==========================
-// clasificacion
-
-// clasificacion.idclasificacion
-// clasificacion.nombreColumna
-// ==========================
-
-// ===========================
-// plataforma
-
-// plataforma.idplataforma
-// plataforma.nombre
-// ===========================
-
-// SELECT name, price, details, type,  FROM food, food_order  WHERE breakfast.id = 'breakfast_id'
-
-$sql =
-    "SELECT
-        inventario.cantidad,
-        inventario.estado,
-        inventario.nombre,
-        inventario.precio,
-        clasificacion.nombre,
-        plataforma.nombre
-    FROM inventario , clasificacion , plataforma
-    WHERE clasificacion.idclasificacion = $variable
-    AND inventario.estado = $variable
-    AND plataforma.idplataforma = $variable
-
-    group by  anuncio.idanuncio";

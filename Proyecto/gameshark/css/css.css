@@ -1,0 +1,5 @@
+@media screen and (max-width: 602px) {
+    .myclassnone {
+        display: : none !important;
+    }
+}

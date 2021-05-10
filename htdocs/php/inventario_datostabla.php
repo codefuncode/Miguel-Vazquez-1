@@ -45,21 +45,21 @@ try {
         echo $data['precio'];
         echo '</td>';
 
-        // echo '<td>';
-        // echo '<form  action="editar_inventario.php" method="post">';
-        // echo "<input type='hidden'name='id_inventario'value='$id'/>";
+        echo '<td>';
+        echo '<form  action="../php/editar_inventario.php" method="post">';
+        echo "<input type='hidden'name='id_inventario'value='$id'/>";
 
-        // echo "<input type='submit' class='btn btn-warning'value='Editar'> ";
+        echo "<input type='submit' class='btn btn-warning'value='Editar'> ";
 
-        // echo '</form>';
-        // echo '</td>';
-        // echo '<td>';
-        // echo '<form  action="eliminar_inventario.php" method="post">';
-        // echo "<input type='hidden'name='id_inventario'value='$id'/>";
+        echo '</form>';
+        echo '</td>';
+        echo '<td>';
+        echo '<form  action="../php/elimina_record_juego.php" method="post">';
+        echo "<input type='hidden'name='id_inventario'value='$id'/>";
 
-        // echo "<input type='submit' class='btn btn-danger'value='Eliminar'> ";
-        // echo '</form>';
-        // echo '</td>';
+        echo "<input type='submit' class='btn btn-danger'value='Eliminar'> ";
+        echo '</form>';
+        echo '</td>';
 
         echo '</tr>';
     }

@@ -18,6 +18,7 @@ try {
         echo $data['nombre'];
         echo '</option>';
     }
+    $stmt->closeCursor();
 } catch (PDOException $e) {
 
 }

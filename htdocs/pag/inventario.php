@@ -150,7 +150,7 @@ include "../php/check_cooke.php";
                     </tr>
                   </thead>
                   <tbody id="displaydatos">
-                    <?php include_once '../php/datostabla.php'?>
+                    <?php include_once '../php/inventario_datostabla.php';?>
                   </tbody>
                 </table>
               </div>

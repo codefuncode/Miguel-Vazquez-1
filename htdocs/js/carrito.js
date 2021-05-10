@@ -62,6 +62,7 @@ function selecionatr(argument) {
     //  Se seleccionan todos los tr de la tabla 
     let displaydatos =
         document.querySelectorAll("#displaydatos tr");
+    let form_carrito = document.getElementById("form_carrito");
 
     for (var i = 0; i < displaydatos.length; i++) {
         //  todos los tr de la tabla tendrán evento click
@@ -73,6 +74,33 @@ function selecionatr(argument) {
         });
 
     }
+    // DEsactiva el evento submit y solo lo ejecuta  si existen articulaos seleccionados 
+    form_carrito.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let displaydatos =
+            document.querySelectorAll("#displaydatos tr");
+
+        let = seleccion_articulos = 0;
+
+        for (var i = 0; i < displaydatos.length; i++) {
+            if (displaydatos[i].style.backgroundColor == "green") {
+                seleccion_articulos++;
+            }
+        }
+        if (seleccion_articulos == 0) {
+
+            swal({
+                title: "Selecciona artículos",
+                icon: "error"
+            });
+
+        } else {
+            document.getElementById('form_carrito').submit();
+        }
+
+    });
 
     // Agregar evento al botón numérico para calcular cantidad  de acuerdo a el valor de la cantidad multiplicada por el precio
 }

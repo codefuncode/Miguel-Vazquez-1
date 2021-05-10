@@ -15,6 +15,7 @@ include "../php/check_cooke.php";
     <link href="../css/carrito.css" rel="stylesheet"/>
     <script src="../js/jquery.min.js" type="text/javascript">
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body>
     <?php include "../comp/nav.php";?>
@@ -97,7 +98,7 @@ include "../php/check_cooke.php";
                   <!--  Formulario  encargado  recopilar y  los datos de las selecciones del usuario. Estas selecciones son los juegos que desea comprar. Los mismos son generados con JavaScript  de manera dinámica .
 
                   No los vemos aquí pero se generaran a a medida que el usuario interactúa con la interfaz -->
-                  <form action="../php/comprar.php" method="post">
+                  <form id="form_carrito" action="../php/comprar.php" method="post" >
                     <!-- <form> -->
                     <input class="carritobtn continue w3-button w3-green w3-round-xxlarge w3-padding-large" id="carritobtn" type="submit" value="Comprar Ahora" />
                     <div class="datos_hide">
