@@ -1,6 +1,6 @@
 <?php
 
-
+//  Necesario
 //obtiene las opciones de las clasificaciones disponibles para utilizarlas en las tablas de inventario.
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -18,6 +18,7 @@ try {
         echo $data['nombre'];
         echo '</option>';
     }
+    $stmt->closeCursor();
 } catch (PDOException $e) {
 
 }

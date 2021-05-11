@@ -10,20 +10,35 @@ if (!isset($_COOKIE["ID"])) {
     include_once 'coneccion.php';
 }
 
-// include "funciones.php";
+// Variables  se utilizan en un fichero que depende de este
+// para trabajar el despliegue de datos de la compra
+
 $videojuegos_id  = [];
 $videojuegos_qty = [];
 $indice          = 0;
 
 // =================================================================
 //  https://www.w3schools.com/php/php_arrays_sort.asp
-//  REcompilamos los datos de los input ocultos generados con javascript  por la funcion "datos_compra" ubicada en el fichero carrito.js en la línea  340 espesificamente valores declarados en la línea 364
+//  Recompilamos los datos de el input ocultos generados con JavaScript
+// por la función "datos_compra" ubicada en el fichero carrito.js
+// ==========================================================
+
+//  Recorre la variable que contiene datos JSON
 foreach ($_POST["arraydatos"] as $value) {
 
-    $matriz                   = json_decode($value, true);
-    $videojuegos_id[$indice]  = $matriz['idjuego'];
+    //  Decodifica el JSON recuperado de los elementos
+    //  input hide que hacen referencia a esta vía post
+
+    $matriz = json_decode($value, true);
+    //  Se rellena la variable matriz  por índice con el ID de los juego o juegos
+    $videojuegos_id[$indice] = $matriz['idjuego'];
+    //  Se rellena la vasariabl;e matroiiz   con la cantidad de los juegos
     $videojuegos_qty[$indice] = $matriz['qty'];
+    //  Variable índice para asegurar el índice en la matriz {$videojuegos_id} y  la matriz {$videojuegos_qty}
     $indice++;
+
+    //  Se actualiza la cantidad de juegos en la base de datos debido a la compra.
+
     actualizar_cantidad($matriz['idjuego'], $matriz['qty']);
 
 }
@@ -83,7 +98,7 @@ function actualizar_cantidad($id, $cantidad)
         margin-bottom: 25px !important;
       }
       .borde{
-
+        /*border:5px solid black;*/
       }
     </style>
   </head>
@@ -130,6 +145,7 @@ function actualizar_cantidad($id, $cantidad)
     </div>
   </div>
 </nav>
+<!--  Incluye formulario de datos para incorporar los en la Factura  -->
 <?php include "../pag/pago.php";?>
 
 <?php include "../pag/resibo.php";?>
@@ -140,3 +156,4 @@ function actualizar_cantidad($id, $cantidad)
  comprar_seccion();
   </script>
 </html>
+

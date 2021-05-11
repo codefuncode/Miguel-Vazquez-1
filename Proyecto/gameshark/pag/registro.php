@@ -74,7 +74,9 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
             header("Location: inicio.php");
 
         }
-
+        // $filas = $sql->rowCount();
+        // set the resulting array to associative
+        // $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -82,7 +84,7 @@ if ((isset($_POST['nombre'])) && ($_POST['nombre'] != "") &&
     $conn = null;
 
 } else {
-
+    // header("Location: registro.php");
 }
 
 ?>

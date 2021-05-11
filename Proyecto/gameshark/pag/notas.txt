@@ -1,0 +1,158 @@
+((isset($_POST['nombre']) && (!$_POST['nombre'] == "")) &&
+    (isset($_POST['estado']) && (!$_POST['estado'] == "")) &&
+    (isset($_POST['fecha']) && (!$_POST['fecha'] == "")) &&
+    (isset($_POST['idclasificacion']) && (!$_POST['idclasificacion'] == "")) &&
+    (isset($_POST['idplataforma']) && (!$_POST['idplataforma'] == "")) &&
+    (isset($_POST['cantidad']) && (!$_POST['cantidad'] == "")) &&
+    (isset($_POST['precio']) && (!$_POST['precio'] == "")))
+
+
+<li class="items">
+<div class="infoWrap">
+<div class="cartSection">
+<img alt="" class="itemImg" src="../img/technics-q-c-300-300-4.jpg"/>
+
+<h3>
+Item Name 1
+</h3>
+<p>
+<input class="qty" placeholder="3" type="text" style="width: 50px" />
+x $5.00
+</p>
+<p class="stockStatus">
+In Stock
+</p>
+</div>
+<div class="prodTotal cartSection">
+<p>
+$15.00
+</p>
+</div>
+<div class="cartSection removeWrap">
+<!--  se debe agregar con javascript para que funcione -->
+<a class="remove" href="#">
+x
+</a>
+</div>
+</div>
+</li>
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+<?php
+include_once "global.php";
+$videojuegos_id = [];
+$indice         = 0;
+
+if (isset($_POST["arraydatos"])) {
+
+    include_once "../pag/pago.php";
+
+    unset($_POST["arraydatos"]);
+
+} else {
+
+    // =================================================================
+    //  https://www.w3schools.com/php/php_arrays_sort.asp
+    foreach ($GLOBALS["arraydatos"] as $value) {
+
+        $matriz                  = json_decode($value, true);
+        $videojuegos_id[$indice] = $matriz['idjuego'];
+        $indice++;
+        // actualizar_cantidad($matriz['idjuego'], $matriz['qty']);
+
+    }
+
+    $valores = implode(' , ', $videojuegos_id);
+    seleccionar_juegos($valores);
+
+    $indice         = 0;
+    $indices_juegos = "";
+
+    //  Uso  DE  WHERE IN
+    //  SELECT * FROM `members` WHERE `membership_number` IN (1,2,3);
+    function actualizar_cantidad($id, $cantidad)
+    {
+        include 'coneccion.php';
+
+        try {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->prepare("SELECT cantidad FROM inventario WHERE idjuego = $id");
+
+            $stmt->execute();
+            $result         = $stmt->fetchAll();
+            $nueva_cantidad = $result[0]['cantidad'] - $cantidad;
+            // echo $result[0]['cantidad'];
+            // echo " - ";
+            // echo $cantidad;
+            // echo " = ";
+            // echo $nueva_cantidad;
+            $stmt->closeCursor();
+            $stmt2 = $conn->prepare("UPDATE inventario SET cantidad = $nueva_cantidad WHERE idjuego = $id");
+            $stmt2->execute();
+
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        $conn = null;
+    }
+
+    function seleccionar_juegos($param_id)
+    {
+        include 'coneccion.php';
+        try {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->prepare("SELECT * FROM inventario WHERE idjuego IN ($param_id)");
+
+            $stmt->execute();
+            // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            // $result = $stmt->fetchAll();
+            // for ($i = 0; $i < count($result); $i++) {
+            //     $row[$i]["idjuego"];
+            //     $row[$i]"nombre"];
+            //     $row[$i]["estado"];
+            //     $row[$i]["fecha"];
+            //     $row[$i]["idclasificacion"];
+            //     $row[$i]["idplataforma"];
+            //    $row[$i]["cantidad"];
+            //    $row[$i]["precio"];
+
+            // }
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            for ($i = 0; $i < count($row); $i++) {
+                // echo '<br/>';
+                // echo $row[$i]["idjuego"];
+                // echo '<br/>';
+                // echo $row[$i]["nombre"];
+                // echo '<br/>';
+                // echo $row[$i]["estado"];
+                // echo '<br/>';
+                // echo $row[$i]["fecha"];
+                // echo '<br/>';
+                // echo $row[$i]["idclasificacion"];
+                // echo '<br/>';
+                // echo $row[$i]["idplataforma"];
+                // echo '<br/>';
+                // echo $row[$i]["cantidad"];
+                // echo '<br/>';
+                // echo $row[$i]["precio"];
+                // echo '<br/>';
+                // echo '===========================';
+                // echo '<br/>';
+            }
+
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        $conn = null;
+    }
+
+}

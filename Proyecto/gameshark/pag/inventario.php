@@ -5,16 +5,21 @@ include "../php/check_cooke.php";
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <!-- icono dela pagina -->
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!--
+    Icono de la pagina
+    -->
     <link href="../img/144100970_1017876292074905_5821562716646159982_n.png" rel="icon"/>
+    <!--
+    Bootstrap del HTML
+    -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="../css/css.css" rel="stylesheet" type="text/css"/>
-    <!-- Librerías  -->
+    <!--
+    Librerías
+    -->
     <script src="../js/jquery.min.js" type="text/javascript">
     </script>
-    <!--     <script src="js/jquery.dataTables.min.js" type="text/javascript">
-          </script> -->
     <script src="../js/sweetalert.min.js" type="text/javascript">
     </script>
     <!-- -->
@@ -23,7 +28,9 @@ include "../php/check_cooke.php";
     </title>
   </head>
   <body>
-    <!--  Panel de navegación  negro  usando clases de Boostrap para dar estilo al HTML -->
+    <!--
+    Panel de navegación negro usando clases de Boostrap para dar estilo al HTML.
+    -->
     <?php include "../comp/nav.php";?>
     <?php include_once '../php/insertarjuego.php'?>
     <div class="container-fluid mb-5 pb-5">
@@ -36,7 +43,9 @@ include "../php/check_cooke.php";
                   <label for="nombre">
                     Nombre del Juego:
                   </label>
-                  <!--  Elemento de entrada de texto input  -->
+                  <!--
+                  Elemento de entrada de texto input
+                   -->
                   <input class="form-control" id="nombre" name="nombre" required="" type="text"/>
                 </div>
               </div>
@@ -148,7 +157,7 @@ include "../php/check_cooke.php";
                     </tr>
                   </thead>
                   <tbody id="displaydatos">
-                    <?php include_once '../php/datostabla.php'?>
+                    <?php include_once '../php/inventario_datostabla.php';?>
                   </tbody>
                 </table>
               </div>
@@ -157,5 +166,9 @@ include "../php/check_cooke.php";
         </div>
       </div>
     </div>
+    <!--     <script src="../js/funciones.js" type="text/javascript">
+          </script>
+          <script src="../js/js.js" type="text/javascript">
+          </script> -->
   </body>
 </html>
