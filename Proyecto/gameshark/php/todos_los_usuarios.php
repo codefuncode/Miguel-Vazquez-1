@@ -1,6 +1,4 @@
 <?php
-
-// Coneccion con la base de datos
 include_once "coneccion.php";
 
 try {
@@ -36,30 +34,19 @@ try {
         echo $data['tipo_usuario'];
         echo '</td>';
 
-        // =============================
-        //  Botón para editar recupera el ID del récord de turno.
-        //  Recuperamos también el tipo de usuario y así  evitar la
-        //  eliminación del administrador en el momento de que se ejecute
-        // la consulta relacionada con este formulario
-
         echo '<td>';
-        // Formulario ediitar
         echo '<form  action="editar.php" method="get">';
-
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";
         echo "<input type='hidden'name='tipo_usuario'value='$tipo_usuario'/>";
         echo "<input type='submit' class='btn btn-warning'value='Editar'> ";
 
         echo '</form>';
-
         echo '</td>';
-
         echo '<td>';
-        //  Formularioo eliminar
         echo '<form  action="eliminar.php" method="get">';
         echo "<input type='hidden'name='idusuario'value='$idusuario'/>";
         echo "<input type='hidden'name='tipo_usuario'value='$tipo_usuario'/>";
-
+        echo "<input type='submit' class='btn btn-danger'value='Eliminar'> ";
         echo '</form>';
         echo '</td>';
 

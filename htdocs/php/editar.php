@@ -52,7 +52,7 @@ include "coneccion.php";
 <div class="" style="padding: 50px;">
 
 </div>
-      <form  action="editar_exe.php" method="get">
+      <form  action="editar_usuario.php" method="post">
     <div class="col-4 botones_ver-usuarios">
       <?php
 
