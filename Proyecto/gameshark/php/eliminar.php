@@ -52,7 +52,7 @@ include "coneccion.php";
 <?php
 
 //  Elimina el usuario  con el id  y verifica que el tipo de
-// usuario no sea administrador y lo borrará
+// usuario no sea administrador y lo borrara
 if (isset($_GET["tipo_usuario"]) && $_GET["tipo_usuario"] !== 'admin') {
 
     if (isset($_GET["idusuario"])) {

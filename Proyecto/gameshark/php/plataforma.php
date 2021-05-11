@@ -1,5 +1,6 @@
 <?php
 
+//  Necesario
 //obtiene las opciones de las plataformas disponibles para utilizarlas en las tablas de inventario.
 
 try {

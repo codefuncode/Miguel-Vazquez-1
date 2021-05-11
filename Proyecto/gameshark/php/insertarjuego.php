@@ -1,6 +1,7 @@
+
 <?php
-//  nesesario
-//inserta el juego que se escribio usando los campos de input en la base de datos usando $_POST.
+//  Nesesario
+//inserta el juego que se escribió usando los campos de input en la base de datos usando $_POST.
 if ((isset($_POST['nombre'])) && (isset($_POST['estado'])) && (isset($_POST['fecha'])) && (isset($_POST['idclasificacion'])) && (isset($_POST['idplataforma'])) && (isset($_POST['cantidad'])) && (isset($_POST['precio']))) {
 
     try {
@@ -29,19 +30,10 @@ if ((isset($_POST['nombre'])) && (isset($_POST['estado'])) && (isset($_POST['fec
         $stmt->bindParam(":precio", $precio, PDO::PARAM_STR);
 
         $stmt->execute();
-        // $respuesta = array("respuesta" => "si");
 
-        // $respuesta = json_encode($respuesta);
-
-        // echo $respuesta;
         echo '<script> swal({title: "Registro insertado ", icon: "success",});</script>';
 
     } catch (PDOException $e) {
-        // $respuesta = array("respuesta" => "ni");
-
-        // $respuesta = json_encode($respuesta);
-
-        // echo $respuesta;
 
         echo '<script> swal({title: "No se pudo conectar con la base de datos", icon: "warning",});</script>';
 
@@ -51,5 +43,5 @@ if ((isset($_POST['nombre'])) && (isset($_POST['estado'])) && (isset($_POST['fec
     $conn = null;
 
 } else {
-    // echo "Campos vacios";
+
 }

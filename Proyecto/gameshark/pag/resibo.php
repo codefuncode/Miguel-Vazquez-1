@@ -1,6 +1,7 @@
 <!-- ==================================================================== -->
-<!--  Id se emplea para jugar con las secciones datos de la tarjeta
-  y  esta misma sección  -->
+<!-- Id se emplea para jugar con las secciones datos de la tarjeta
+  y  esta misma sección
+   -->
 <!-- ==================================================================== -->
 <div id="seccion_resibo" class="recibo_seccion_resibo" >
   <div class="w3-container w3-center">
@@ -72,6 +73,8 @@
             </tr>
             <!--  Se incorpora codigo php para escribir los datos  -->
             <?php include_once "../php/resibo_datos_tabla.php";?>
+
+
           </table>
           <div class="" style="height: 50px;">
             <div class="borde" style="float: right; width: 25%; margin-top: 10px; border-radius: 100px; margin-right: 20px; margin-top: 20px;">

@@ -1,6 +1,6 @@
 
 <?php
-
+// Despliega una tabla  con los datos  de los usuarios
 if (
     (isset($_POST['tipo_usuario'])) &&
     (!($_POST['tipo_usuario'] == "0"))

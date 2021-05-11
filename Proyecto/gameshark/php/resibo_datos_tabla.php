@@ -1,7 +1,16 @@
 <?php
-$valores = implode(' , ', $videojuegos_id);
-seleccionar_juegos($valores, $videojuegos_qty);
+// ===============================================
 
+// Separa los valores  por una coma  estos valores son los
+// id de todo  los juegos seleccionados en la compra  ese
+// valor se usa en  la siguiente llamada a función
+// para pasarle de parámetro a la consulta MySql
+
+$valores = implode(' , ', $videojuegos_id);
+
+seleccionar_juegos($valores, $videojuegos_qty);
+// ===============================================
+//  Restableciminto de variables
 $indice         = 0;
 $indices_juegos = "";
 
@@ -45,7 +54,7 @@ function seleccionar_juegos($param_id, $videojuegos_qty)
 
     } catch (PDOException $e) {
 
-
+        // echo "Error: " . $e->getMessage();
     }
     $conn = null;
 }
