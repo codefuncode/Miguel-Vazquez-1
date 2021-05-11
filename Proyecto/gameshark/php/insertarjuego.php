@@ -1,5 +1,5 @@
 <?php
-//  nesesario
+//  Nesesario
 //inserta el juego que se escribió usando los campos de input en la base de datos usando $_POST.
 if ((isset($_POST['nombre'])) && (isset($_POST['estado'])) && (isset($_POST['fecha'])) && (isset($_POST['idclasificacion'])) && (isset($_POST['idplataforma'])) && (isset($_POST['cantidad'])) && (isset($_POST['precio']))) {
 
@@ -33,7 +33,6 @@ if ((isset($_POST['nombre'])) && (isset($_POST['estado'])) && (isset($_POST['fec
         echo '<script> swal({title: "Registro insertado ", icon: "success",});</script>';
 
     } catch (PDOException $e) {
-
 
         echo '<script> swal({title: "No se pudo conectar con la base de datos", icon: "warning",});</script>';
 

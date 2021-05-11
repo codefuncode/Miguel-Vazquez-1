@@ -10,6 +10,6 @@
 $servername = "localhost";
 $username   = "root";
 $password   = "";
-// $dbname     = "gameshark";
-$dbname = "GameShark";
+$dbname     = "gameshark";
+
 ?>
