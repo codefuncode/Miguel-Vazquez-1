@@ -1,9 +1,7 @@
 
 <?php
 
-$_POST['estado']          = "usado";
-$_POST['idclasificacion'] = 1;
-$_POST['idplataforma']    = 1;
+//  Trabaja consultas a múltiples tablas para desplegar los datos de la  selección de reportes
 
 if ((isset($_POST['estado'])) &&
     (isset($_POST['idclasificacion'])) &&
@@ -20,19 +18,7 @@ if ((isset($_POST['estado'])) &&
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // $sql =
-        //     "SELECT inventario.idjuego,
-        //     inventario.cantidad,
-        //     inventario.estado,
-        //     inventario.nombre as nombre_inventario,
-        //     inventario.precio,
-        //     clasificacion.nombre as nombre_clasificacion,
-        //     plataforma.nombre as nombre_plataforma
-        //     FROM inventario , clasificacion , plataforma
-        //     WHERE clasificacion.idclasificacion = $idclasificacion
-        //     AND inventario.estado = '$estado'
-        //     AND plataforma.idplataforma = $idplataforma
-        //     group by inventario.idjuego";
+        //  Consulta especifica  por tabla  y campo
 
         $sql =
             "SELECT inventario.idjuego,
@@ -44,7 +30,9 @@ if ((isset($_POST['estado'])) &&
             plataforma.nombre as nombre_plataforma
             FROM inventario , clasificacion , plataforma
             WHERE inventario.idclasificacion = :idclasificacion
+            AND inventario.idclasificacion = clasificacion.idclasificacion
             AND inventario.estado = :estado
+            AND inventario.idplataforma = plataforma.idplataforma
             AND inventario.idplataforma = :idplataforma
             group by inventario.idjuego";
 
@@ -59,7 +47,6 @@ if ((isset($_POST['estado'])) &&
         echo '<thead>';
         echo '
             <tr class="w3-black">
-            <th>id</th>
             <th>Nombe del juego</th>
             <th>Estado</th>
             <th>Plataforma</th>
@@ -79,7 +66,6 @@ if ((isset($_POST['estado'])) &&
             $precio   = $data['precio'];
 
             echo "<tr>";
-            echo "<td> $id </td>";
             echo "<td> $nombre_inventario </td>";
             echo "<td> $estado </td>";
             echo "<td> $nombre_plataforma </td>";
