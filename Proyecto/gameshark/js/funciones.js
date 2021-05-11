@@ -1,8 +1,8 @@
 var accioin = "";
 const server = "php.php";
 
-//  Se utiliza para eliminar todos los nodos
-// donde se debe generar elementos dinámicos
+//  Se utiliza para eliminar todos los nodos 
+// donde debamos generar elementos dinámicos 
 function borra_nodos(argument) {
 
     while (argument.firstChild) {
@@ -11,16 +11,16 @@ function borra_nodos(argument) {
 
     }
 }
-// Petición al servidor de los datos  que
+// Petición al servidor de los datos  que  
 // llenan los elementos select de la aplicación
 function getdata(argument) {
 
-    //  función de la librería Jqueri para hacer peticiones al servidor
+    //  función de la librería Jqueri para hacer peticiones al servidor 
     $.post(server, {
         fun: 'clasificacion'
     }, function(respuesta) {
 
-        //  Selección del elemento html que mostrará los datos
+        //  Selección del elemento html que mostrara los datos 
         let clasificacion = document.getElementById("clasificacion");
         let option = [];
 
@@ -29,7 +29,7 @@ function getdata(argument) {
         respuesta = JSON.parse(respuesta);
 
         console.log(respuesta);
-        // Bucle  para agregar los elementos option necesarios  e incorporarlos como hijos del elemento seleccionado
+        // Bucle  para agregar los elementos option necesarios  e incorporarlos como hijos del elemento seleccionado 
 
         for (var i = 0; i < respuesta.length; i++) {
 
@@ -60,7 +60,7 @@ function getdata(argument) {
 
         });
     });
-    //  función de la librería Jquery para hacer peticiones al servidor
+    //  función de la librería Jqueri para hacer peticiones al servidor 
 
 }
 
@@ -71,7 +71,7 @@ function guardar(argument) {
 
     guardar.addEventListener("click", function(argument) {
 
-        //  Selección de todos los elementos de entrada del formulario
+        //  Selección de todos los elementos de  entrada del formulario
         let nombre =
             document.querySelector("#nombre");
         let estado1 =
@@ -101,7 +101,7 @@ function guardar(argument) {
         } else {
             estado = "";
         }
-        // Matriz  con todos los valores recuperados para
+        // Matriz  con todos los valores recuperados para  
         // comprobar si existe alguno vacío
         let datos = [
             nombre.value,
@@ -129,7 +129,7 @@ function guardar(argument) {
 
             }
         }
-
+        // console.log(camposvacios);
 
         if (camposvacios == 0) {
 
@@ -159,7 +159,7 @@ function guardar(argument) {
                         title: "Registro insertado ",
                         icon: "success",
                     });
-
+                    // devuelveinventario();
                 } else if (respuesta['respuesta'] == "no") {
                     swal({
                         title: "Error del servidor",
@@ -182,7 +182,7 @@ function guardar(argument) {
 
     });
 }
-
+// var registros;
 
 // https://stackoverflow.com/questions/25434813/simple-pagination-in-javascript#25435422
 
@@ -223,10 +223,11 @@ function prueba(argument) {
     let btn = document.querySelectorAll("tbody tr td > button");
 
     for (var i = 0; i < btn.length; i++) {
-
+        // console.log(btn[i]);
         btn[i].addEventListener("click", function(argument) {
 
-
+            // console.log(this.classList.contains('borrar'));
+            // console.log(this.classList.contains('editar'));
 
             if (this.classList.contains('borrar')) {
                 accioin = "borrar";
@@ -254,6 +255,11 @@ function prueba(argument) {
                         let valor = campos[i].textContent.trim();
                         console.log(valor);
 
+                        // for (var j = 0; j < estado.length; j++) {
+                        //     if (estado[j] == valor) {
+                        //         estado[j].checked = true;
+                        //     }
+                        // }
 
                         if (valor == "nuevo") {
 
@@ -267,7 +273,9 @@ function prueba(argument) {
                             estado2.checked = true;
                         }
 
-
+                        // console.log(estado);
+                        // nombre.value = campos[i].textContent;
+                        // console.log(campos[i].textContent);
                     } else if (i == 2) {
                         let clasificacion = document.getElementById("clasificacion");
                         let option = document.querySelectorAll("#clasificacion > option ");
@@ -280,7 +288,7 @@ function prueba(argument) {
                                 clasificacion.value = option[a].value;
                             }
                         }
-
+                        // console.log(clasificacion);
 
                     } else if (i == 3) {
                         let valor = campos[i].textContent.trim();
@@ -301,7 +309,7 @@ function prueba(argument) {
                     }
                 }
             }
-
+            // console.log(this.parentElement.parentElement.getAttribute("idjuego"));
 
             if (accioin == "borrar") {
 
@@ -315,7 +323,7 @@ function prueba(argument) {
         });
     }
 
-
+    // var x = document.getElementById("myLI").parentElement.nodeName; 
 }
 
 function devuelveinventario(argument) {
@@ -324,12 +332,13 @@ function devuelveinventario(argument) {
     }, function(respuesta) {
         respuesta = JSON.parse(respuesta);
         console.log(respuesta);
-
+        // registros = respuesta;
 
         // =============================
 
-        // Manejo  del la longitud de las filas del a tabla
-        // Nota Guardar todos los datos  para luego usar esta función  y desplegar solo lo que desea
+        // Manejo  del la longitud de las filas del a tabla 
+        // Nota Guardar todos los datos  para luego usar esta funcion  y desplegar solo los quie deseamos 
+        // let data = navegacion(respuesta);
         let data = respuesta;
         // =============================
 
@@ -339,7 +348,8 @@ function devuelveinventario(argument) {
         console.log(paguinas);
         console.log(residuo);
 
-
+        // var size = Object.size(respuesta[0]);
+        // console.log("size = " + size);
         let fila = [];
         let att = [];
 
@@ -358,7 +368,10 @@ function devuelveinventario(argument) {
 
             }
 
-
+            // let btneditar = document.createElement("BUTTON");
+            // btneditar.innerHTML = "Editar";
+            // let btborrar = document.createElement("BUTTON");
+            // btborrar.innerHTML = "Bottar";
 
             att.push(document.createAttribute("idjuego"));
             att[i].value = data[i]['idjuego'];
@@ -370,7 +383,22 @@ function devuelveinventario(argument) {
             registro[5].innerHTML = data[i]['cantidad'];
             registro[6].innerHTML = data[i]['precio'];
 
-
+            // registro[7].appendChild((function() {
+            //     let btn = document.createElement("BUTTON");
+            //     let att = document.createAttribute("class"); // Create a "class" attribute
+            //     att.value = "btn btn-warning editar";
+            //     btn.setAttributeNode(att);
+            //     btn.innerHTML = "Editar";
+            //     return btn;
+            // }()));
+            // registro[8].appendChild((function() {
+            //     let btn = document.createElement("BUTTON");
+            //     let att = document.createAttribute("class"); // Create a "class" attribute
+            //     att.value = "btn btn-danger borrar";
+            //     btn.setAttributeNode(att);
+            //     btn.innerHTML = "Borrar";
+            //     return btn;
+            // }()));
 
             for (var z = 0; z < registro.length; z++) {
 
@@ -383,7 +411,50 @@ function devuelveinventario(argument) {
         for (var i = 0; i < fila.length; i++) {
             displaydatos.appendChild(fila[i]);
         }
-
+        // $('#example').DataTable({
+        //     "pagingType": "full_numbers"
+        // });
+        // selecionatr();
+        //  escribir  contenido de las celdas de la tabla en los campos corepndiantes para editar 
+        // prueba();
     });
 
 }
+
+// function selecionatr(argument) {
+
+//     let displaydatos = document.querySelectorAll("#displaydatos tr");
+
+//     for (var i = 0; i < displaydatos.length; i++) {
+
+//         displaydatos[i].addEventListener("click", function(argument) {
+
+//             // this.style.backgroundColor = "red";
+//             console.log(this.getAttribute("idjuego"));
+//             cambiacolor(this);
+//         });
+
+//         // console.log(displaydatos[i]);
+//     }
+
+//     function cambiacolor(argument) {
+//         for (var i = 0; i < displaydatos.length; i++) {
+//             if (displaydatos[i] == argument) {
+//                 displaydatos[i].style.backgroundColor = "red";
+//             } else {
+//                 displaydatos[i].style.backgroundColor = "#343A40";
+//             }
+//         }
+//     }
+//     // body... 
+// }
+// Funcion recuperada de https://stackoverflow.com/questions/5223/length-of-a-javascript-object#6700
+// ==========================================================
+
+// Get the size of an object
+// var size = Object.size(myObj);
+// nventario.nombre,inventario.estado,inventario.fecha, clasificacion.nombre as cnombre, plataforma.nombre as pnombre,inventario.cantidad , inventario.precio
+
+// $('#example').DataTable({
+//     "pagingType": "full_numbers"
+// });

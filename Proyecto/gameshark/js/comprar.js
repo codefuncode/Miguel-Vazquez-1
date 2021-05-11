@@ -67,7 +67,7 @@
          return M.join(' ');
      };
 
-  
+     // console.log(getBrowserInfo());
 
      var res = getBrowserInfo().split(" ");
      console.log(res);

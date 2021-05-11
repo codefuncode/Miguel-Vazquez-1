@@ -1,0 +1,57 @@
+{
+    "articulo": {
+        "product_id": "1",
+        "product_model": "HFJ5G1.5",
+        "product_type": "plat",
+        "product_return": "graviteits"
+    },
+    "articulo": {
+        "product_id": "2",
+        "product_model": "HHJ5S2.5",
+        "product_type": "holle plunjer",
+        "product_return": "veer"
+    }
+}
+
+{
+
+    "articulo": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "age": 46
+    },
+    "articulo": person,
+    "articulo"
+    person
+}
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 46
+};
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 46
+};
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 46
+};
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 46
+};
+
+//  var jkaslbdjbvlkj={
+
+//      "articulo":person,
+//     "articulo" :person,
+//     "articulo" person
+// }
+//  var person = {firstName:"John", lastName:"Doe", age:46};  
+//   var person = {firstName:"John", lastName:"Doe", age:46};  
+//    var person = {firstName:"John", lastName:"Doe", age:46};  
+//     var person = {firstName:"John", lastName:"Doe", age:46};

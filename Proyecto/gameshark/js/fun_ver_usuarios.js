@@ -18,7 +18,7 @@ function fun_ver_usuarios(argument) {
 
     function fun_eliminar(argument) {
 
-      
+        // <a href="test_get.php?subject=PHP&web=W3schools.com">Test $GET</a>
 
     }
 
