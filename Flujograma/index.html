@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	var cuenta1=100;
+	var cuenta2=100;
+	var cuenta3=100;
+	var cuenta4=100;
+	var cuenta5=100;
+	var cuenta6=100;
+	var cuenta7=100;
+
+
+
+	function transferencia(cuenta, cuentadestino, valor_transferencia) {
+
+		cuenta = cuenta - valor_transferencia;
+		cuentadestino = cuentadestino + valor_transferencia;
+
+		console.log("Cuenta de transferencia = "+ cuenta);
+		console.log('Cuenta de destino = '+ cuentadestino);
+	}
+
+	transferencia(cuenta1, cuenta2, 50);
+</script>
+</body>
+</html>
